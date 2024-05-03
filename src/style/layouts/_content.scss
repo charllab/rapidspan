@@ -1,0 +1,57 @@
+.z-index--1 {
+    z-index: -1;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.z-index-2 {
+    z-index: 2;
+}
+
+.z-index-3 {
+    z-index: 3;
+}
+
+.z-index-10 {
+    z-index: 10;
+}
+
+.z-index-100 {
+    z-index: 100;
+}
+
+.z-index-200 {
+    z-index: 200;
+}
+
+.bg-padding {
+    padding: $spacer*2 0;
+}
+
+.block__tint-overlay {
+    opacity: .65;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(14, 122, 105);
+    background: linear-gradient(252deg, #edfffc 0%, #556fbc 100%);
+    mix-blend-mode: multiply;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.v-hidden {
+    visibility: hidden !important;
+    @include media-breakpoint-down(md) {
+        display: none !important;
+    }
+}

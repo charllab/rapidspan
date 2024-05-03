@@ -1,0 +1,223 @@
+// Responsive font sizing
+html {
+    font-size: 16px;
+}
+@include media-breakpoint-up(xxl) {
+    font-size: 20px;
+}
+
+// Sets font size to 16px on form elements to prevent input zoom on mobile devices
+@include media-breakpoint-down(sm) {
+    .form-control {
+        font-size: $font-size-base * 1.075;
+    }
+}
+
+// Global
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-family: $font-family-sans-serif;
+    -webkit-overflow-scrolling: touch;
+    line-height: 1.5;
+    font-optical-sizing: auto;
+}
+
+.small, small {
+    font-size: 70%;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+    margin-bottom: $spacer*.75;
+    font-weight: 700;
+}
+
+h1, .h1 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    @include media-breakpoint-up(xxxl) {
+        font-size: 4rem;
+        line-height: 1.1;
+    }
+}
+
+h2, .h2 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    @include media-breakpoint-up(xxxl) {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+}
+
+h3, .h3 {
+    font-size: 1.5rem;
+    line-height: 1.333;
+    @include media-breakpoint-up(xxl) {
+        font-size: 1rem;
+        line-height: 1.428;
+    }
+}
+
+h4, .h4 {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    @include media-breakpoint-up(xxl) {
+        font-size: 1.5625rem;
+        line-height: 1.4;
+    }
+}
+
+h5, .h5 {
+    font-size: 1.0625rem;
+    line-height: 1.53;
+    @include media-breakpoint-up(xxl) {
+        font-size: 1.1875rem;
+        line-height: 1.79;
+    }
+}
+
+h6, .h6 {
+    font-size: 0.6875rem;
+    line-height: 1.636;
+    @include media-breakpoint-up(xxl) {
+        font-size: 0.75rem;
+        line-height: 1.666;
+    }
+}
+
+.text-media-blocked {
+    h1, .h1, h2, .h2 {
+        max-width: 400px;
+    }
+}
+
+h3, .h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    @include media-breakpoint-up(xl) {
+        font-size: 1.5rem;
+    }
+}
+
+h4, .h4, .fz-faq {
+    font-size: 1rem;
+    font-weight: 600;
+    @include media-breakpoint-up(xl) {
+        font-size: 1.25rem;
+    }
+}
+
+h5, .h5 {
+    font-size: .95rem;
+    font-weight: 600;
+    @include media-breakpoint-up(xl) {
+        font-size: 1rem;
+    }
+}
+
+h6, .h6 {
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.lead {
+    font-weight: 400;
+    font-size: 1.1rem;
+    @include media-breakpoint-up(xl) {
+        font-size: 1.5rem;
+    }
+}
+
+p {
+    margin-bottom: $spacer;
+}
+
+.p {
+    font-size: 1rem !important;
+}
+
+.intro {
+    font-size: 1.25rem;
+    font-weight: 600;
+    @include media-breakpoint-up(xxl) {
+        font-size: 1.6rem;
+    }
+}
+
+.spaced-list {
+    padding: 0 0 0 22px;
+}
+
+.spaced-list li {
+    margin-bottom: .5rem;
+}
+
+.text-md {
+    font-size: 90%;
+}
+
+.list-unstyled li {
+    padding-bottom: .25rem;
+
+    &:last-of-type {
+        padding-bottom: 0;
+    }
+}
+
+.list-unstyled {
+    margin-bottom: 1rem;
+}
+
+.small-0 {
+    font-size: .8rem;
+}
+
+.small-1 {
+    font-size: .88rem;
+}
+
+.small-2 {
+    font-size: .9rem;
+}
+
+.text-white {
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        color: white;
+    }
+}
+
+.fw-bold {
+    font-family: $font-family-sans-serif;
+    font-weight: 600 !important;
+}
+
+.montserrat-400 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.montserrat-600 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+.quattrocento-regular {
+    font-family: "Quattrocento", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.quattrocento-bold {
+    font-family: "Quattrocento", serif;
+    font-weight: 700;
+    font-style: normal;
+}
