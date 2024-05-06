@@ -1,7 +1,3 @@
-// Base
-//
-// Our custom base reset that helps create Craft & Bootstrap synergy
-
 // Reset
 html {
     height: 100%;
@@ -67,4 +63,11 @@ mark {
 
 .bg-white {
     background-color: $white;
+}
+
+.bg-accent {
+    background-color: $brand-accent !important;
+}
+.bg-soft {
+    background-color: $soft !important;
 }

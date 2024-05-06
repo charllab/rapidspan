@@ -1,9 +1,9 @@
 // Responsive font sizing
 html {
     font-size: 16px;
-}
-@include media-breakpoint-up(xxl) {
-    font-size: 20px;
+    @include media-breakpoint-up(xxl) {
+        font-size: 20px;
+    }
 }
 
 // Sets font size to 16px on form elements to prevent input zoom on mobile devices
@@ -53,6 +53,8 @@ h2, .h2 {
 }
 
 h3, .h3 {
+    font-family: $font-family-sans-serif;
+    font-weight: 500 !important;
     font-size: 1.5rem;
     line-height: 1.333;
     @include media-breakpoint-up(xxl) {
@@ -135,6 +137,7 @@ h6, .h6 {
 
 p {
     margin-bottom: $spacer;
+    font-size: 1rem;
 }
 
 .p {
