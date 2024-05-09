@@ -444,7 +444,7 @@
             </div>
         </div>
     </section>
-
+    <!--gallery stack-->
     <section>
         <div class="container">
             <ul class="gallery-list d-flex flex-row list-inline list-unstyled">
@@ -481,7 +481,7 @@
             </div>
         </div>
     </section>
-
+    <!--project accordion-->
     <section class="py-3">
         <div class="container">
             <div class="row justify-content-center">
@@ -490,7 +490,8 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item border-0">
                             <h2 class="accordion-header">
-                                <button class="accordion-button bg-primary text-white rounded-0" type="button" data-bs-toggle="collapse"
+                                <button class="accordion-button bg-primary text-white rounded-0" type="button"
+                                        data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     Accordion Item #1
                                 </button>
@@ -504,12 +505,12 @@
                                                 src="https://unsplash.it/1935/1352?random" alt=" "
                                                 class="img-fluid d-block object-fit-cover">
                                             <div class="list-item-project-title position-absolute text-center p-75">
-                                                    <div class="title-wrapper position-relative">
-                                                        <img src="<?php bloginfo('template_url'); ?>/images/ico-bridge.png"
-                                                             alt=" "
-                                                             class="project-bride-icon img-fluid mx-auto">
-                                                        <h3 class="text-uppercase text-white">Halfway river bridge</h3>
-                                                    </div>
+                                                <div class="title-wrapper position-relative">
+                                                    <img src="<?php bloginfo('template_url'); ?>/images/ico-bridge.png"
+                                                         alt=" "
+                                                         class="project-bride-icon img-fluid mx-auto">
+                                                    <h3 class="text-uppercase text-white">Halfway river bridge</h3>
+                                                </div>
 
                                             </div>
                                         </a>
@@ -588,6 +589,74 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--listing blocks for wp-queries-->
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <ul class="d-flex flex-row list-inline list-unstyled project-list py-1">
+                        <li class="list-inline-item list-item-project">
+                            <a href="#" class="position-relative">
+                                <img
+                                    src="https://unsplash.it/1935/1352?random" alt=" "
+                                    class="img-fluid d-block object-fit-cover">
+                                <div class="list-item-project-title position-absolute text-center p-75">
+                                    <div class="title-wrapper position-relative">
+                                        <img src="<?php bloginfo('template_url'); ?>/images/ico-bridge.png"
+                                             alt=" "
+                                             class="project-bride-icon img-fluid mx-auto">
+                                        <h3 class="text-uppercase text-white">Halfway river bridge</h3>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-inline-item list-item-project">
+                            <a href="#" class="position-relative">
+                                <img
+                                    src="https://unsplash.it/1935/1352?random" alt=" "
+                                    class="img-fluid d-block object-fit-cover">
+                                <div class="list-item-project-title position-absolute text-center p-75">
+                                    <div class="title-wrapper position-relative">
+                                        <img src="<?php bloginfo('template_url'); ?>/images/ico-bridge.png"
+                                             alt=" "
+                                             class="project-bride-icon img-fluid mx-auto">
+                                        <h3 class="text-uppercase text-white">South Fraser perimeter road (highway 17)</h3>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-inline-item list-item-project">
+                            <a href="#" class="js-gallery-item"><img
+                                    src="https://unsplash.it/1935/1352?random" alt=" "
+                                    class="img-fluid  object-fit-cover"></a>
+                        </li>
+                        <li class="list-inline-item list-item-project">
+                            <a href="#" class="js-gallery-item"><img
+                                    src="https://unsplash.it/1935/1352?random" alt=" "
+                                    class="img-fluid  object-fit-cover"></a>
+                        </li>
+                        <li class="list-inline-item list-item-project">
+                            <a href="#" class="js-gallery-item"><img
+                                    src="https://unsplash.it/1935/1352?random" alt=" "
+                                    class="img-fluid  object-fit-cover"></a>
+                        </li>
+                        <li class="list-inline-item list-item-project">
+                            <a href="#" class="js-gallery-item"><img
+                                    src="https://unsplash.it/1935/1352?random" alt=" "
+                                    class="img-fluid  object-fit-cover"></a>
+                        </li>
+                        <li class="list-inline-item list-item-project">
+                            <a href="#" class="js-gallery-item"><img
+                                    src="https://unsplash.it/1935/1352?random" alt=" "
+                                    class="img-fluid  object-fit-cover"></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
