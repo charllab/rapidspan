@@ -299,11 +299,17 @@ main {
 
 .list-item-project {
     position: relative;
-
     img {
         aspect-ratio: 1 / 1;
         object-fit: cover;
         width: 100%;
+    }
+
+    @include media-breakpoint-down(md) {
+        max-height: 25vw;
+        img {
+            height: 100%;
+        }
     }
 
     .list-item-project-title {
@@ -333,6 +339,23 @@ main {
             margin-bottom: 0;
             opacity: 0;
             transition: all 3s ease 0s;
+        }
+
+        @include media-breakpoint-down(md) {
+            background:rgba($primary,.6);
+            .title-wrapper,
+            img.project-bride-icon {
+                transition: none;
+            }
+            .title-wrapper {
+                display: flex;
+                align-items: center;
+                transform: none !important;
+            }
+            img.project-bride-icon {
+                display: none !important;
+                opacity: 0 !important;
+            }
         }
     }
 

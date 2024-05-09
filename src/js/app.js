@@ -5,7 +5,7 @@ jQuery(function () {
         loop:true,
         items:1,
         margin:10,
-        nav:false,
+        nav:true,
         dots: true,
         autoplay: 'true',
         autoplayTimeout: 7000,

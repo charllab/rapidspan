@@ -509,7 +509,7 @@
                                                     <img src="<?php bloginfo('template_url'); ?>/images/ico-bridge.png"
                                                          alt=" "
                                                          class="project-bride-icon img-fluid mx-auto">
-                                                    <h3 class="text-uppercase text-white">Halfway river bridge</h3>
+                                                    <h3 class="text-uppercase text-white mb-0">Halfway river bridge</h3>
                                                 </div>
 
                                             </div>
@@ -609,7 +609,7 @@
                                         <img src="<?php bloginfo('template_url'); ?>/images/ico-bridge.png"
                                              alt=" "
                                              class="project-bride-icon img-fluid mx-auto">
-                                        <h3 class="text-uppercase text-white">Halfway river bridge</h3>
+                                        <h3 class="text-uppercase text-white mb-0">Halfway river bridge</h3>
                                     </div>
 
                                 </div>
@@ -625,7 +625,7 @@
                                         <img src="<?php bloginfo('template_url'); ?>/images/ico-bridge.png"
                                              alt=" "
                                              class="project-bride-icon img-fluid mx-auto">
-                                        <h3 class="text-uppercase text-white">South Fraser perimeter road (highway
+                                        <h3 class="text-uppercase text-white mb-0">South Fraser perimeter road (highway
                                             17)</h3>
                                     </div>
 
@@ -669,7 +669,7 @@
                 <div class="col-lg-10 text-center">
                     <h2 class="h1">What our Employees say</h2>
                     <div class="header-decorative d-flex justify-content-center mb-2 mt-150"><span></span></div>
-                    <div class="owl-carousel owl-theme">
+                    <div class="owl-carousel owl-theme position-relative">
                         <div class="item">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco

@@ -1,9 +1,9 @@
-<header id="header" class="hero-nav-overlay">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
+<header id="header" class="header-height hero-nav-overlay with-light-top position-relative">
+    <nav class="navbar navbar-expand-lg navbar-dark w-100 position-absolute z-index-200 p-1 px-lg-2">
+        <div class="container-fluid">
             <div class="nav-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="<?php bloginfo('template_url'); ?>/images/logo.svg"
+                    <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png"
                          alt="<?php bloginfo('name'); ?> - Logo"
                          class="img-fluid">
                     <span class="sr-only"><?php bloginfo('name'); ?></span>
@@ -54,14 +54,21 @@
         </div>
     </div>
 
-    <section class="section section--lg">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-md-10 col-lg-7 col-xl-6">
-                    <h2 class="h1 text-white">Maecenas sed diam eget</h2>
-                    <p class="lead text-muted">
-                        Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-                    </p>
+    <section class="section-image position-relative">
+        <img
+            src="https://unsplash.it/2880/1500?random" alt=" "
+            class="img-fluid object-fit-cover">
+        <div class="block__tint-overlay position-absolute z-index-1"></div>
+        <div class="block__tint-overlay position-absolute z-index-2"></div>
+        <div class="container header-container position-absolute z-index-2 w-100 h-100">
+            <div class="row justify-content-center justify-content-center text-center h-100">
+                <div class="col-lg-10">
+                    <div class="top-content flex align-content-center justify-content-center h-100 pt-1 pt-lg-3">
+                        <h1 class="text-white">Building Better Communities
+                            for 30 Years</h1>
+                        <h2 class="text-white">Deh Cho Bridge</h2>
+                        <div class="header-decorative d-flex justify-content-center mb-2 mt-150"><span class="bg-white"></span></div>
+                    </div>
                 </div>
             </div>
         </div>
