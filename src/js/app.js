@@ -1,5 +1,19 @@
 jQuery(function () {
 
+    // Owl Carousel
+    jQuery('.owl-carousel').owlCarousel({
+        loop:true,
+        items:1,
+        margin:10,
+        nav:false,
+        dots: true,
+        autoplay: 'true',
+        autoplayTimeout: 7000,
+        autoplaySpeed: 3000,
+        smartSpeed: 1000,
+        navText: []
+    })
+
     // Lightbox gallery
     jQuery('.js-gallery').magnificPopup({
         delegate: 'a',

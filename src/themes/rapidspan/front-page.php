@@ -6,7 +6,7 @@
         <div class="block__img-overlay position-absolute z-index-1"></div>
         <div class="container position-relative z-index-2">
             <div class="row justify-content-center">
-                <div class="col-md-10 col-xl-10 text-center">
+                <div class="col-md-10 text-center">
                     <p class="h3 mb-1">Armstrong | grand prairie</p>
                     <img src="<?php bloginfo('template_url'); ?>/images/footer-logo.png"
                          alt=" "
@@ -488,9 +488,9 @@
                 <div class="col-lg-10">
 
                     <div class="accordion" id="accordionExample">
-                        <div class="accordion-item border-0">
+                        <div class="accordion-item border-0 mb-2">
                             <h2 class="accordion-header">
-                                <button class="accordion-button bg-primary text-white rounded-0" type="button"
+                                <button class="accordion-button rounded-0" type="button"
                                         data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     Accordion Item #1
@@ -625,7 +625,8 @@
                                         <img src="<?php bloginfo('template_url'); ?>/images/ico-bridge.png"
                                              alt=" "
                                              class="project-bride-icon img-fluid mx-auto">
-                                        <h3 class="text-uppercase text-white">South Fraser perimeter road (highway 17)</h3>
+                                        <h3 class="text-uppercase text-white">South Fraser perimeter road (highway
+                                            17)</h3>
                                     </div>
 
                                 </div>
@@ -657,6 +658,28 @@
                                     class="img-fluid  object-fit-cover"></a>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h2 class="h1">What our Employees say</h2>
+                    <div class="header-decorative d-flex justify-content-center mb-2 mt-150"><span></span></div>
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                <span class="d-block">- Author Name</span></p>
+                        </div>
+                        <div class="item">2</div>
+                        <div class="item">3</div>
+                    </div>
                 </div>
             </div>
         </div>
