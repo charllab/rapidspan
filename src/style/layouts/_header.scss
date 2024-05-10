@@ -2,6 +2,9 @@
     .navbar {
         top: 0;
         padding: 0;
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+        }
     }
 
     .nav-item {
@@ -103,6 +106,8 @@ body:not(.home) {
     background-repeat: no-repeat;
     background-size: 28px;
     background-position: 0 50%;
+    font-size: .9rem;
+    margin-bottom: 2px;
 }
 
 .with-dark-text {
