@@ -1,5 +1,5 @@
 <header id="header" class="header-height hero-nav-overlay with-dark-text position-relative">
-    <nav class="navbar navbar-expand-lg navbar-dark w-100 z-index-200 p-1 px-lg-2">
+    <nav class="navbar navbar-expand-lg w-100 z-index-200 p-75 px-lg-2">
         <div class="container-fluid">
             <div class="nav-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
