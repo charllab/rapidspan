@@ -25,7 +25,7 @@
                     'menu_class' => 'navbar-nav ms-lg-auto align-items-lg-center',
                     'fallback_cb' => '',
                     'menu_id' => 'main-menu',
-                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s <li class="nav-item ps-0 ps-lg-75"><a href="tel:' . $thetel . '" class="nav-link tel-link">' . $thetel . '</a></li></ul>',
+                    'items_wrap' => '<a href="#main" class="skip-link" tabindex="1">Skip Navigation</a><ul id="%1$s" class="%2$s">%3$s <li class="nav-item ps-0 ps-lg-75"><a href="tel:' . $thetel . '" class="nav-link tel-link">' . $thetel . '</a></li></ul>',
                     'walker' => new bootstrap_5_wp_nav_menu_walker(),
                 ]); ?>
 

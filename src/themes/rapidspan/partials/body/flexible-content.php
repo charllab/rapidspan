@@ -15,18 +15,16 @@ if ($body) :
 
                 ?>
 
-                <!--                <p>This is media_and_text</p>-->
-
-
             <?php elseif ($layout['acf_fc_layout'] == 'content_block'): ?>
 
                 <?php
                 $background_image = $layout['background_image'];
                 $content_width = $layout['content_width'];
                 $content_block = $layout['structure']['content_block'];
+                $header_image = $layout['structure']['content_block']['image_header'];
                 $buttons = $layout['structure']['content_block']['buttons']['button'];
                 $spacing = $layout['spacing'];
-//                dump($layout);
+                //dump($layout);
                 if($spacing && in_array('py-7', $spacing)) {
                     $py = 'py-7';
                 }
@@ -35,7 +33,7 @@ if ($body) :
                 }
                 ?>
 
-                <section class="full-width-content full-width-content--dark my-5 <?php echo $py . ' ' . $my; ?> position-relative z-index--1">
+                <section class="full-width-content<?php echo $bgi = (!empty($background_image)) ? ' full-width-content--dark' : ''; ?> my-5 py-5<?php echo $py = (!empty($py)) ? ' py-7' : ''; ?><?php echo $my = (!empty($my)) ? ' my-7' : ''; ?> position-relative z-index--1">
                     <?php if (!empty($background_image)): ?>
                         <img src="<?php echo $background_image['url']; ?>" alt="<?php echo $background_image['url']; ?>"
                              class="full-width-content--dark--bg position-absolute z-index-1"
@@ -46,6 +44,11 @@ if ($body) :
                     <div class="container position-relative z-index-2">
                         <div class="row justify-content-center">
                             <div class="col-md-10 <?php echo $content_width; ?> text-center">
+                                <?php if (!empty($header_image)): ?>
+                                    <img src="<?php echo $header_image['url']; ?>"
+                                         alt="<?php echo $header_image['alt']; ?>"
+                                         class="full-width-content-header-icon img-fluid mb-150">
+                                <?php endif; ?>
                                 <?php if (!empty($content_block['above_header'])): ?>
                                     <p class="h3 mb-1"><?php echo $content_block['above_header']; ?></p>
                                 <?php endif; ?>
@@ -82,9 +85,9 @@ if ($body) :
 
             <?php elseif ($layout['acf_fc_layout'] == 'columned_content'): ?>
 
-                <!--            --><?php //$columned_content = $layout['structure']['columned_content'];; ?><!--; ?>-->
-                <p>This is columned_content</p>
-                <!--            --><?php //dump($columned_content); ?>
+                <?php
+                dump($layout);
+                ?>
 
 
             <?php elseif ($layout['acf_fc_layout'] == 'cards'): ?>
