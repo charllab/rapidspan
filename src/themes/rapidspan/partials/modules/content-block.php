@@ -28,14 +28,16 @@ $header_decorative = $content_block['header_decorative'] ?? false;
     <p class="h3 mb-1"><?php echo esc_html($content_block['above_header']); ?></p>
 <?php endif; ?>
 
-<h2 class="h1"><?php echo esc_html($content_block['header'] ?? 'No header found'); ?></h2>
+<?php if (!empty($content_block['header'])): ?>
+<h2 class="header-title"><?php echo esc_html($content_block['header']); ?></h2>
+<?php endif; ?>
 
 <?php if (!empty($content_block['below_header'])): ?>
     <h3><?php echo esc_html($content_block['below_header']); ?></h3>
 <?php endif; ?>
 
 <?php if (!empty($header_decorative)): ?>
-    <div class="header-decorative d-flex justify-content-center mb-2 mt-150">
+    <div class="header-decorative mb-2 mt-150">
         <span></span>
     </div>
 <?php endif; ?>

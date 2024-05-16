@@ -342,3 +342,16 @@ $dot-background-active: $primary;
         }
     }
 }
+
+.owl-carousel .item > p {
+    padding-left: $spacer*3;
+    padding-right: $spacer*3;
+}
+.item-img {
+    img {
+        object-fit: cover;
+        height: 56.25%;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+}

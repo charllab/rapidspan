@@ -38,7 +38,7 @@
             </div>
         </div>
     </section>
-    <section class="footer-bar bg-accent text-white">
+    <section class="footer-bar bg-dark text-white">
         <div class="container d-md-flex text-center pt-1 pb-75">
             <div>
                 <p class="mb-250">&copy; 2024 <?php bloginfo('name'); ?><span

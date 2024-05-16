@@ -96,6 +96,26 @@ h6, .h6 {
     }
 }
 
+.stacked {
+    h2.header-title,
+    h2, .h2 {
+        @extend .h3;
+        @include media-breakpoint-up(xxxl) {
+            max-width: 24ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    h3, .h3 {
+        @extend .h4;
+    }
+}
+.full-width-content {
+    h2.header-title {
+        @extend .h1;
+    }
+}
+
 h3, .h3 {
     font-size: 1.1rem;
     font-weight: 600;

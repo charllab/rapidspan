@@ -73,6 +73,7 @@
 }
 
 .header-decorative {
+    display: flex;
     width: 100%;
 
     span {
@@ -82,6 +83,12 @@
         background-color: $primary;
         left: 0;
         right: 0;
+    }
+}
+
+.full-width-content {
+    .header-decorative {
+        justify-content: center;
     }
 }
 
@@ -171,14 +178,22 @@ main {
 }
 
 .text-media-wide {
-    overflow-x: hidden;
+    overflow: hidden;
+    .row {
+        @include media-breakpoint-up(lg) {
+            min-height: 550px;
+        }
+        @include media-breakpoint-up(xxxl) {
+            min-height: 750px;
+        }
+    }
 }
 
 .text-media-wide--img {
     width: 74%;
     height: auto;
-    transform: translateY(-48%) !important;
-    top: 50% !important;
+    transform: translateY(-47%) !important;
+    top: 47% !important;
     z-index: 3;
     @include media-breakpoint-up(xl) {
         width: 60%;
@@ -198,53 +213,101 @@ main {
     }
 }
 
+.img-is-last {
+    @include media-breakpoint-up(lg) {
+        padding-right: $spacer;
+    }
+    @include media-breakpoint-up(xxxl) {
+        padding-right: $spacer*2;
+    }
+}
+.img-is-first {
+    @include media-breakpoint-up(lg) {
+        padding-left: $spacer;
+    }
+    @include media-breakpoint-up(xxxl) {
+        padding-left: $spacer*2;
+    }
+}
+
 .order-lg-last .text-media-wide--img {
-    left: 51% !important;
+    left: 50% !important;
 }
 
 .order-lg-first .text-media-wide--img {
-    right: 59% !important;
+    right: 60.5% !important;
+    @include media-breakpoint-up(xl) {
+        right: 60.125% !important;
+    }
+    @include media-breakpoint-up(xxl) {
+        right: 58.125% !important;
+    }
+    @include media-breakpoint-up(xxxl) {
+        right: 58.75% !important;
+    }
+    @include media-breakpoint-up(xwide) {
+        right: 58.125% !important;
+    }
 }
 
 .cta {
-    opacity: .85;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $primary;
+    background-color: rgba($primary,.85);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 500;
     @include media-breakpoint-up(lg) {
         width: 80%;
         left: 35%;
-        color: red !important;
+        //color: red !important;
     }
     @media screen and (min-width: 1102px) and (max-width: 1199px) {
         width: 90%;
         left: 25%;
-        color: lime !important;
+        //color: lime !important;
     }
     @include media-breakpoint-up(xl) {
         width: 100%;
         left: 15%;
-        color: red !important;
+        //color: red !important;
     }
     @include media-breakpoint-up(xxl) {
         width: 115%;
         left: 0;
-        color: pink !important;
+        //color: pink !important;
     }
     @include media-breakpoint-up(xxxl) {
         width: 115%;
         left: 0;
-        color: yellow !important;
+        //color: yellow !important;
     }
     @include media-breakpoint-up(xwide) {
         width: 115%;
         left: 0;
-        color: cyan !important;
+        //color: cyan !important;
+    }
+}
+.text-media-wide {
+    .order-lg-last {
+        .cta {
+            overflow: hidden;
+            width: 100%;
+            left: 0;
+            @include media-breakpoint-up(xl) {
+                width: 100%;
+                left: 0;
+                right: 15%;
+                color: white !important;
+            }
+            @include media-breakpoint-up(xxl) {
+                width: 115%;
+            }
+
+        }
     }
 }
 
@@ -270,14 +333,14 @@ main {
 
     .is-video {
         .cta {
-            opacity: .85;
+            opacity: 1;
             top: 0;
             left: 0;
             width: calc(100% - 30px);
             margin-left: $spacer*.5;
             margin-right: $spacer*.5;
             height: 100%;
-            background-color: $primary;
+            background-color: rgba($primary,.85);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -500,4 +563,17 @@ a.cover-block {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.cta {
+    @include media-breakpoint-down(xxl) {
+        svg {
+            max-width: 100px;
+        }
+    }
+    @include media-breakpoint-between(xl, xxxl) {
+        svg {
+            max-width: 120px;
+        }
+    }
 }

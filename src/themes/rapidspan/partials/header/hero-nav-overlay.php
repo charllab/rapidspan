@@ -1,5 +1,6 @@
 <header id="header" class="header-height hero-nav-overlay with-dark-text position-relative">
     <nav class="navbar navbar-expand-lg w-100 z-index-200 p-75 px-lg-2">
+        <a href="#main" class="skip-link">Skip Navigation</a>
         <div class="container-fluid">
             <div class="nav-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
@@ -25,7 +26,7 @@
                     'menu_class' => 'navbar-nav ms-lg-auto align-items-lg-center',
                     'fallback_cb' => '',
                     'menu_id' => 'main-menu',
-                    'items_wrap' => '<a href="#main" class="skip-link" tabindex="1">Skip Navigation</a><ul id="%1$s" class="%2$s">%3$s <li class="nav-item ps-0 ps-lg-75"><a href="tel:' . $thetel . '" class="nav-link tel-link">' . $thetel . '</a></li></ul>',
+                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s <li class="nav-item ps-0 ps-lg-75"><a href="tel:' . $thetel . '" class="nav-link tel-link">' . $thetel . '</a></li></ul>',
                     'walker' => new bootstrap_5_wp_nav_menu_walker(),
                 ]); ?>
 
@@ -34,8 +35,8 @@
 
     <section class="section-image position-relative">
         <img
-            src="https://unsplash.it/2880/1500?random" alt=" "
-            class="img-fluid object-fit-cover">
+            src="https://unsplash.it/2880/1500?random" alt="Banner background image"
+            class="img-fluid object-fit-cover" aria-hidden="true">
         <div class="block__tint-overlay for-general position-absolute z-index-3"></div>
         <div class="block__tint-overlay for-general-bottom position-absolute z-index-2"></div>
         <div class="block__tint-overlay for-dark-text position-absolute z-index-4"></div>
