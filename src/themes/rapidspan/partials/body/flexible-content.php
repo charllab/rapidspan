@@ -85,7 +85,8 @@ if ($body) :
                                         >
                                         <?php if (!empty($video_url)): ?>
                                             <div class="cta position-absolute z-index-2 text-white text-uppercase">
-                                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                                <div
+                                                    class="d-flex flex-column justify-content-center align-items-center">
                                                     <div class="mb-50">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="157" height="157"
                                                              viewBox="0 0 157 157" aria-hidden="true">
@@ -121,6 +122,148 @@ if ($body) :
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </section>
+
+            <?php elseif ($layout['acf_fc_layout'] == 'constraint_content_header_follower'): ?>
+
+                <?php
+                $spacing = $layout['spacing'] ?? [];
+                $py = in_array('py-7', $spacing) ? 'py-7' : '';
+                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+
+                // Initialize classes array
+                $classes = ['full-width-content', 'wide-container ', 'full-width-content-pull-for-gradient', 'mb-5', 'position-relative', 'z-index--1'];
+
+                // Convert classes array to string
+                $classes_string = implode(' ', $classes);
+
+                // Extract content block from structure
+                $content_block = $layout['structure']['content_block'] ?? [];
+                ?>
+                <section class="<?php echo esc_attr($classes_string); ?>">
+                    <img src="https://unsplash.it/1920/1024?random" alt=" "
+                         class="full-width-content--dark--bg position-absolute z-index-1 d-none">
+                    <div class="block__img-overlay position-absolute z-index-1"></div>
+                    <div class="container position-relative z-index-2 pt-4">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 text-center">
+                                <?php
+                                // Set the variables you need in the partial
+                                set_query_var('content_block', $content_block);
+                                get_template_part('partials/modules/content-block');
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            <?php elseif ($layout['acf_fc_layout'] == 'page_breaker_image'): ?>
+            <?php
+                $spacing = $layout['spacing'] ?? [];
+                $py = in_array('py-7', $spacing) ? 'py-7' : '';
+                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+
+                // Initialize classes array
+                $classes = [''];
+                // Conditional classes
+                if (!empty($background_image)) {
+                    $classes[] = 'full-width-content--dark';
+                }
+                if (!empty($py)) {
+                    $classes[] = 'py-7';
+                }
+                if (!empty($my)) {
+                    $classes[] = 'my-7';
+                }
+
+                // Convert classes array to string
+                $classes_string = implode(' ', $classes);
+                $breaker_img = $layout['image'] ?? [];
+            ?>
+            <?php if(!empty($breaker_img)): ?>
+                <section class="<?php echo esc_attr($classes_string); ?>">
+                    <img src="<?php echo $breaker_img['url']; ?>" alt="<?php echo $breaker_img['alt']; ?>" class="page-breaker-img img-fluid" aria-hidden="true">
+                </section>
+            <?php endif; ?>
+
+            <?php elseif ($layout['acf_fc_layout'] == 'partner_logos'): ?>
+                <?php
+                $spacing = $layout['spacing'] ?? [];
+                $py = in_array('py-7', $spacing) ? 'py-7' : '';
+                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+
+                // Initialize classes array
+                $classes = ['my-5'];
+                // Conditional classes
+                if (!empty($background_image)) {
+                    $classes[] = 'full-width-content--dark';
+                }
+                if (!empty($py)) {
+                    $classes[] = 'py-7';
+                }
+                if (!empty($my)) {
+                    $classes[] = 'my-7';
+                }
+
+                // Convert classes array to string
+                $classes_string = implode(' ', $classes);
+
+                $heading_section = $layout['heading_section'];
+                $logos = $layout['logos'];
+                ?>
+
+                <section class="<?php echo esc_attr($classes_string); ?>">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 text-center">
+                                <?php if (!empty($heading_section)): ?>
+                                    <h2 class="h3 text-uppercase mb-50"><?php echo $heading_section['header']; ?></h2>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <!--repeater start-->
+                            <?php foreach ($logos as $logo):
+                                $logo_img = $logo['logo'] ?? [];
+                                $logo_link = $logo['affiliate_link'] ?? [];
+                                ?>
+                                <div class="col-md-3 text-center">
+                                        <?php echo $logo_link_start = (!empty($logo_link)) ? '<a href="' . $logo_link['url'] . '" target="' . $logo_link['target'] . '" title="' . $logo_link['title'] . '" >' : '' ; ?>
+                                        <img src="<?php echo $logo_img['url']; ?>" alt="<?php echo $logo_img['alt']; ?>" class="logo-image img-fluid">
+                                        <?php echo $logo_link_end = (!empty($logo_link)) ? '</a>' : ''; ?>
+                                </div>
+                            <?php endforeach; ?>
+                            <!--repeater end-->
+                        </div>
+                    </div>
+                </section>
+
+
+
+            <?php elseif ($layout['acf_fc_layout'] == 'wide_image_with_block_title'): ?>
+
+                <?php
+                $wide_image = $layout['image'];
+                $wide_title = $layout['title'];
+                $wide_link = $layout['link'];
+                ?>
+                <section class="crossing-the-bridge-section position-relative z-index-1 my-4">
+                    <div class="crossing-the-bridge-top">
+                        <img src="<?php echo $wide_image['url']; ?>" alt="<?php echo $wide_image['alt']; ?>"
+                             class="img-fluid crossing-the-bridge-img object-fit-cover z-index--1" aria-hidden="true">
+                        <div class="block__img-overlay position-absolute z-index-1"></div>
+                    </div>
+
+                    <div class="container crossing-the-bridge-container py-2 position-relative z-index-2">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 text-center text-white">
+                                <h2 class="text-uppercase"><?php echo $wide_title; ?></h2>
+                                <a href="<?php echo $wide_link['url']; ?>"
+                                   class="btn btn-light"><?php echo $wide_link['title']; ?></a>
+                            </div>
+                        </div>
+                        <div class="block__img-overlay crossing-the-bridge-overlay position-absolute z-index-1"></div>
                     </div>
                 </section>
 
@@ -308,23 +451,24 @@ if ($body) :
                     </div><!--container-->
                 </section>
 
-
             <?php elseif ($layout['acf_fc_layout'] == 'gallery'): ?>
+
                 <?php
                 $items = $layout['items'];
                 ?>
+
                 <section>
                     <div class="container">
                         <ul class="gallery-list d-flex flex-row list-inline list-unstyled">
                             <?php foreach ($items as $item):
-
                                 $galleryimg = $item['gallery_image'];
                                 $gallery_video_url = $item['has_video_link'];
+                                $galleryimgurl = $galleryimg['url'];
                                 ?>
-                                <li class="list-inline-item list-width-item<?php echo $js = (!empty($gallery_video_url)) ? ' js-video list-width-item-wide is-video' : ' js-gallery' ?>">
+                                <li class="list-inline-item list-width-item<?php echo $js = (!empty($gallery_video_url)) ? ' js-video list-width-item-wide is-video' : ' js-gallery'; ?>">
                                     <a
-                                        href="<?php echo $js = (!empty($gallery_video_url)) ?  $gallery_video_url : $galleryimg['url']; ?>"
-                                        class="<?php echo $js = (!empty($gallery_video_url)) ? 'js-video' : 'js-gallery-item' ?>">
+                                        href="<?php echo $js = (!empty($gallery_video_url)) ? $gallery_video_url : $galleryimgurl; ?>"
+                                        class="<?php echo $js = (!empty($gallery_video_url)) ? 'js-video' : 'js-gallery-item'; ?>">
                                         <img
                                             src="<?php echo $galleryimg['url']; ?>"
                                             alt="<?php echo $galleryimg['alt']; ?>"
@@ -374,7 +518,183 @@ if ($body) :
 
             <?php elseif ($layout['acf_fc_layout'] == 'cards'): ?>
 
+                <?php
+                $spacing = $layout['spacing'] ?? [];
+                $py = in_array('py-7', $spacing) ? 'py-7' : '';
+                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+
+                // Initialize classes array
+                $classes = ['three-col-container py-3'];
+
+                // Conditional classes
+                if (!empty($background_image)) {
+                    $classes[] = 'full-width-content--dark';
+                }
+                if (!empty($py)) {
+                    $classes[] = 'py-7';
+                }
+                if (!empty($my)) {
+                    $classes[] = 'my-7';
+                }
+                $classes_string = implode(' ', $classes);
+
+                $heading_section = $layout['heading_section'];
+                $header_decorative = $heading_section['header_decorative'];
+                $cards = $layout['cards']['card'];
+                ?>
+
+
+                <section class="<?php echo esc_attr($classes_string); ?>">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 text-center">
+                                <?php if (!empty($heading_section)): ?>
+                                    <h2 class="h1 mb-2"><?php echo $heading_section['header']; ?></h2>
+                                    <?php if (!empty($header_decorative)): ?>
+                                        <div class="header-decorative justify-content-center mb-2 mt-150">
+                                            <span></span>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <!--repeater start-->
+                            <?php foreach ($cards as $card):
+                                $card_icon = $card['icon'];
+                                $card_title = $card['card_title'];
+                                $card_link = $card['button_cta'];
+                                ?>
+                                <div class="col-lg-4 border-right-target text-center">
+                                    <div class="d-flex justify-content-center align-items-center mb-50">
+                                        <div class="w-25 text-right">
+                                            <img src="<?php echo $card_icon['url']; ?>"
+                                                 alt="<?php echo $card_icon['alt']; ?>"
+                                                 class="img-fluid d-block ms-auto me-50" aria-hidden="true">
+                                        </div>
+                                        <div class="w-25 text-start">
+                                            <h3 class="mb-0 ms-50 pe-lg-250"><?php echo $card_title; ?></h3>
+                                        </div>
+                                    </div>
+                                    <a href="<?php echo $card_link['url']; ?>" class="btn btn-secondary mb-2 mb-lg-1">Learn
+                                        More<span
+                                            class="sr-only">about <?php echo $card_link['title']; ?></span></a>
+                                </div>
+                            <?php endforeach; ?>
+                            <!--repeater end-->
+                        </div>
+                    </div>
+                </section>
+
+            <?php elseif ($layout['acf_fc_layout'] == 'portfolio_accordion'): ?>
+                <?php
+                $spacing = $layout['spacing'] ?? [];
+                $py = in_array('py-7', $spacing) ? 'py-7' : '';
+                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+
+                // Initialize classes array
+                $classes = ['py-4'];
+
+                // Conditional classes
+                if (!empty($background_image)) {
+                    $classes[] = 'py-3';
+                }
+                if (!empty($py)) {
+                    $classes[] = 'py-7';
+                }
+                if (!empty($my)) {
+                    $classes[] = 'my-7';
+                }
+                $classes_string = implode(' ', $classes);
+
+                $heading_section = $layout['heading_section'];
+                $header_decorative = $heading_section['header_decorative'];
+                $portfolio_accordion_tabs = $layout['portfolio_accordion']['accordion_block'];
+                ?>
+
+                <section class="<?php echo esc_attr($classes_string); ?>">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+
+                                <?php if (!empty($heading_section)): ?>
+                                    <div class="text-center">
+                                        <h2 class="h1"><?php echo $heading_section['header']; ?></h2>
+                                        <?php if (!empty($header_decorative)): ?>
+                                            <div class="header-decorative justify-content-center mb-2 mt-150">
+                                                <span></span>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+
+                                <div class="accordion" id="accordionExample">
+                                    <!--start accordion-item tab repeater-->
+                                    <?php
+                                    $tabcounter = 0;
+                                    foreach ($portfolio_accordion_tabs as $portfolio_accordion_tab):?>
+                                        <div class="accordion-item border-0 mb-2">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button rounded-0" type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#collapse--<?php echo $tabcounter; ?>"
+                                                        aria-expanded="true"
+                                                        aria-controls="collapse--<?php echo $tabcounter; ?>">
+                                                    <?php echo $portfolio_accordion_tab['project_portfolio_name']; ?>
+                                                </button>
+                                            </h2>
+                                            <div id="collapse--<?php echo $tabcounter; ?>"
+                                                 class="accordion-collapse collapse <?php echo $show = ($tabcounter == 0) ? 'show' : ''; ?>"
+                                                 data-bs-parent="#accordionExample">
+                                                <ul class="d-flex flex-row list-inline list-unstyled project-list py-1">
+                                                    <!--start project repeater-->
+                                                    <?php
+                                                    $portfolio_accordion_tab_project = $portfolio_accordion_tab['projects'];
+                                                    foreach ($portfolio_accordion_tab_project as $portfolio_item):
+                                                        $portfolio_image = $portfolio_item['project_image'];
+                                                        $portfolio_link = $portfolio_item['project_link'];
+                                                        ?>
+                                                        <li class="list-inline-item list-item-project">
+                                                            <a href="<?php echo $portfolio_link['url']; ?>"
+                                                               class="position-relative"
+                                                               title="Visit the <?php echo $portfolio_item['project_title'] . ' page.'; ?>">
+                                                                <img
+                                                                    src="<?php echo $portfolio_image['url']; ?>"
+                                                                    alt="<?php echo $portfolio_image['alt']; ?>"
+                                                                    class="img-fluid d-block object-fit-cover"
+                                                                    aria-hidden="true">
+                                                                <div
+                                                                    class="list-item-project-title position-absolute text-center p-75">
+                                                                    <div class="title-wrapper position-relative">
+                                                                        <img
+                                                                            src="<?php bloginfo('template_url'); ?>/images/ico-bridge.png"
+                                                                            alt=" "
+                                                                            class="project-bride-icon img-fluid mx-auto"
+                                                                            aria-hidden="true">
+                                                                        <h3 class="text-uppercase text-white mb-0">
+                                                                            <?php echo $portfolio_item['project_title']; ?>
+                                                                        </h3>
+                                                                    </div>
+
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                    <!--end project repeat-->
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <?php $tabcounter++;
+                                    endforeach; ?>
+                                    <!--end accordion-item tab-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             <?php elseif ($layout['acf_fc_layout'] == 'testimonial_slider'): ?>
+
                 <?php
                 $spacing = $layout['spacing'] ?? [];
                 $py = in_array('py-7', $spacing) ? 'py-7' : '';
@@ -399,6 +719,7 @@ if ($body) :
                 $heading_section = $layout['heading_section'];
                 $header_decorative = $heading_section['header_decorative'];
                 ?>
+
                 <section class="<?php echo esc_attr($classes_string); ?>">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -431,6 +752,7 @@ if ($body) :
                 </section>
 
             <?php elseif ($layout['acf_fc_layout'] == 'image_slider'): ?>
+
                 <?php
                 $spacing = $layout['spacing'] ?? [];
                 $py = in_array('py-7', $spacing) ? 'py-7' : '';
@@ -455,6 +777,7 @@ if ($body) :
                 $heading_section = $layout['heading_section'];
                 $header_decorative = $heading_section['header_decorative'];
                 ?>
+
                 <section class="<?php echo esc_attr($classes_string); ?>">
                     <div class="container">
                         <div class="row justify-content-center">
