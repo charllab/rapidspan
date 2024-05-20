@@ -78,7 +78,7 @@ $header_decorative = !empty($header['banner_title']['header_decorative']) ? $hea
                 <?php if (has_post_thumbnail()):
                     $featured_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
                     ?>
-                    <img src="<?php echo esc_url($featured_image_url[0] ?? ''); ?>" alt="" class="img-fluid object-fit-cover" aria-hidden="true">
+                    <img src="<?php echo esc_url($featured_image_url[0] ?? ''); ?>" alt="" class="img-fluid object-fit-cover the-section-image" aria-hidden="true">
                 <?php endif; ?>
                 <div class="block__tint-overlay position-absolute z-index-2" style="opacity: .85 !important;"></div>
                 <div class="container header-container position-absolute z-index-10 w-100 h-100">

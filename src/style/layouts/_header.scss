@@ -283,7 +283,9 @@ section.section-image {
         }
     }
 }
-
+.dropdown-item:hover, .dropdown-item:focus {
+    background: transparent;
+}
 #mainMenu {
     @include media-breakpoint-down(lg) {
         #main-menu {
