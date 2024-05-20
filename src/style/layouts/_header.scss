@@ -11,9 +11,14 @@
     .nav-link .active {
         color: $brand-accent;
     }
+    .nav-link {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        position: relative;
+    }
 
     .nav-item {
-        padding-left: $spacer/2;
+        padding-left: $spacer;
     }
 
     .dropdown-item, .nav-link {
@@ -30,6 +35,18 @@
             border: none;
             background-color: transparent;
             left: $spacer;
+            .nav-item {
+                padding-left: 0;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+        .nav-item {
+            background-color: transparent;
+        }
+        .dropdown-item.active {
+            background-color: transparent;
         }
     }
 
@@ -70,8 +87,7 @@
 body:not(.home) {
     header {
         h1 {
-            @extend h3;
-            text-transform: uppercase;
+            @extend h2;
         }
         header #header {
             margin-bottom: $spacer*3;
@@ -220,7 +236,7 @@ body:not(.home) {
 
 .home {
     .header-height, section.section-image {
-        height: 60vh;
+        //height: 60vh;
     }
 
     @include media-breakpoint-up(lg) {
@@ -231,8 +247,8 @@ body:not(.home) {
 
     section.section-image {
         img {
-            height: 60vh;
-            width: 100%;
+            //height: 60vh;
+            //width: 100%;
         }
     }
 
@@ -255,10 +271,10 @@ body:not(.home) {
 }
 
 section.section-image {
-    img {
-        height: 35vh;
-        width: 100%;
-    }
+    //img {
+    //    height: 35vh;
+    //    width: 100%;
+    //}
 
     @include media-breakpoint-up(lg) {
         img {
@@ -297,10 +313,28 @@ section.section-image {
         }
     }
 }
-.page-template-blog {
+.page-template-page-projects, .page-template-page-blog {
     header {
         .top-content {
             display: none;
         }
     }
+}
+
+
+
+body.single, body.privacy-policy {
+    @include media-breakpoint-up(lg) {
+        .header-height, section.section-image, img.the-section-image {
+            height: 27.5vw !important;
+        }
+    }
+}
+body.privacy-policy {
+    .banner-above-header {
+        display: none;
+    }
+}
+img.fallback-nothing {
+    background-color: rgba($primary,.025);
 }

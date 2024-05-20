@@ -68,3 +68,51 @@ if (function_exists('acf_add_options_page')) {
         'redirect' => false
     ]);
 }
+
+//related post function
+function get_related_posts($post_id, $post_type = 'post', $taxonomy = 'category', $number_of_posts = 4) {
+    $related_posts = [];
+
+    $terms = wp_get_post_terms($post_id, $taxonomy);
+
+    if ($terms && !is_wp_error($terms)) {
+        $term_ids = wp_list_pluck($terms, 'term_id');
+
+        $args = [
+            'post_type' => $post_type,
+            'posts_per_page' => $number_of_posts,
+            'post__not_in' => [$post_id],
+            'tax_query' => [
+                [
+                    'taxonomy' => $taxonomy,
+                    'field' => 'id',
+                    'terms' => $term_ids,
+                ],
+            ],
+        ];
+
+        $related_posts_query = new WP_Query($args);
+
+        if ($related_posts_query->have_posts()) {
+            $related_posts = $related_posts_query->posts;
+        }
+    }
+
+    if (empty($related_posts)) {
+        $args = [
+            'post_type' => $post_type,
+            'posts_per_page' => $number_of_posts,
+            'post__not_in' => [$post_id],
+            'orderby' => 'date',
+            'order' => 'DESC',
+        ];
+
+        $latest_posts_query = new WP_Query($args);
+
+        if ($latest_posts_query->have_posts()) {
+            $related_posts = $latest_posts_query->posts;
+        }
+    }
+
+    return $related_posts;
+}

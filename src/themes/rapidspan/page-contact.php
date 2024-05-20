@@ -6,7 +6,7 @@
  **/
 get_header(); ?>
 
-    <main>
+    <main class="z-index-1">
 
         <div class="py-3">
             <div class="container">
@@ -19,8 +19,6 @@ get_header(); ?>
 
                             <?php while (have_posts()) : the_post(); ?>
 
-                                <h2 class="text-capitalize"><?php the_title(); ?></h2>
-
                                 <?php the_content(); ?>
 
                             <?php endwhile; ?>
@@ -30,8 +28,8 @@ get_header(); ?>
                     </div><!-- col -->
 
                     <div class="col-lg-5">
-                        <div class="pt-3 pb-2 px-2 bg-light">
-                            <h2>Contact Information</h2>
+                        <div class="pt-2 pb-1 px-1 bg-light">
+                            <h4>Contact Information</h4>
                             <?php
                             $removethese = array("(", " ", ")", "-");
                             ?>
@@ -39,19 +37,13 @@ get_header(); ?>
                                 <tr>
                                     <td><strong>Phone: </strong></td>
                                     <td>
-                                        <a href="tel:+1<?php echo strip_tel(get_field('primary_number', 'option')); ?>"><?php echo get_field('primary_number', 'option'); ?></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="pr-1"><strong>Toll Free: </strong></td>
-                                    <td>
-                                        <a href="tel:+1<?php echo strip_tel(get_field('secondary_number', 'option')); ?>"><?php echo get_field('secondary_number', 'option'); ?></a>
+                                        <a href="tel:+1<?php echo strip_tel(get_field('phone_number', 'options')); ?>"><?php echo get_field('phone_number', 'options'); ?></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><strong>E-mail: </strong></td>
                                     <td>
-                                        <a href="mailto:<?php echo get_field('primary_email', 'option'); ?>"><?php echo get_field('primary_email', 'option'); ?></a>
+                                        <a href="mailto:<?php echo get_field('email_address', 'options'); ?>"><?php echo get_field('email_address', 'options'); ?></a>
                                     </td>
                                 </tr>
                                 <tr>

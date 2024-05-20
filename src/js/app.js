@@ -14,6 +14,13 @@ jQuery(function () {
         navText: []
     })
 
+
+    // Lightbox map
+    jQuery('.js-map').magnificPopup({
+        delegate: 'a',
+        type: 'image'
+    });
+
     // Lightbox gallery
     jQuery('.js-gallery').magnificPopup({
         delegate: 'a',

@@ -16,6 +16,7 @@ get_header();
                         <div class="blog-content-width">
                             <h2><?php the_title(); ?></h2>
                             <?php the_content(); ?>
+
                         </div>
 
                         <?php endwhile; ?>
