@@ -1,5 +1,9 @@
 jQuery(function () {
 
+    //init animation
+    AOS.init();
+
+
     // Owl Carousel
     jQuery('.owl-carousel').owlCarousel({
         loop:true,

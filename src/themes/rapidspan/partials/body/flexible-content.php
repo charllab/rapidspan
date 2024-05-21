@@ -145,7 +145,15 @@ if ($body) :
                     <img src="https://unsplash.it/1920/1024?random" alt=" "
                          class="full-width-content--dark--bg position-absolute z-index-1 d-none">
                     <div class="block__img-overlay position-absolute z-index-1"></div>
-                    <div class="container position-relative z-index-2 pt-4">
+                    <div class="container position-relative z-index-2 pt-4"
+                         data-aos="fade-up"
+                         data-aos-offset="120"
+                         data-aos-delay="0"
+                         data-aos-duration="1000"
+                         data-aos-easing="ease"
+                         data-aos-mirror="false"
+                         data-aos-once="false"
+                    >
                         <div class="row justify-content-center">
                             <div class="col-md-10 text-center">
                                 <?php
@@ -181,9 +189,18 @@ if ($body) :
                 $classes_string = implode(' ', $classes);
                 $breaker_img = $layout['image'] ?? [];
                 ?>
-                <?php if(!empty($breaker_img)): ?>
-                    <section class="<?php echo esc_attr($classes_string); ?>">
-                        <img src="<?php echo $breaker_img['url']; ?>" alt="<?php echo $breaker_img['alt']; ?>" class="page-breaker-img img-fluid" aria-hidden="true">
+                <?php if (!empty($breaker_img)): ?>
+                    <section class="<?php echo esc_attr($classes_string); ?>"
+                             data-aos="fade-up"
+                             data-aos-offset="120"
+                             data-aos-delay="0"
+                             data-aos-duration="1000"
+                             data-aos-easing="ease"
+                             data-aos-mirror="false"
+                             data-aos-once="false"
+                    >
+                        <img src="<?php echo $breaker_img['url']; ?>" alt="<?php echo $breaker_img['alt']; ?>"
+                             class="page-breaker-img img-fluid" aria-hidden="true">
                     </section>
                 <?php endif; ?>
 
@@ -224,21 +241,33 @@ if ($body) :
                         </div>
                         <div class="row justify-content-center">
                             <!--repeater start-->
-                            <?php foreach ($logos as $logo):
+                            <?php
+                            $delay = 50; // starting delay value
+                            foreach ($logos as $logo):
                                 $logo_img = $logo['logo'] ?? [];
                                 $logo_link = $logo['affiliate_link'] ?? [];
                                 ?>
-                                <div class="col-md-3 text-center">
-                                    <?php echo $logo_link_start = (!empty($logo_link)) ? '<a href="' . $logo_link['url'] . '" target="' . $logo_link['target'] . '" title="' . $logo_link['title'] . '" >' : '' ; ?>
-                                    <img src="<?php echo $logo_img['url']; ?>" alt="<?php echo $logo_img['alt']; ?>" class="logo-image img-fluid">
+                                <div class="col-md-3 text-center"
+                                     data-aos="zoom-in-up"
+                                     data-aos-offset="120"
+                                     data-aos-delay="<?php echo $delay; ?>"
+                                     data-aos-duration="800"
+                                     data-aos-easing="ease"
+                                     data-aos-mirror="false"
+                                     data-aos-once="false"
+                                >
+                                    <?php echo $logo_link_start = (!empty($logo_link)) ? '<a href="' . $logo_link['url'] . '" target="' . $logo_link['target'] . '" title="' . $logo_link['title'] . '" >' : ''; ?>
+                                    <img src="<?php echo $logo_img['url']; ?>" alt="<?php echo $logo_img['alt']; ?>"
+                                         class="logo-image img-fluid">
                                     <?php echo $logo_link_end = (!empty($logo_link)) ? '</a>' : ''; ?>
                                 </div>
-                            <?php endforeach; ?>
+                                <?php
+                                $delay += 150; // increment the delay value
+                            endforeach; ?>
                             <!--repeater end-->
                         </div>
                     </div>
                 </section>
-
 
 
             <?php elseif ($layout['acf_fc_layout'] == 'wide_image_with_block_title'): ?>
@@ -255,7 +284,15 @@ if ($body) :
                         <div class="block__img-overlay position-absolute z-index-1"></div>
                     </div>
 
-                    <div class="container crossing-the-bridge-container py-2 position-relative z-index-2">
+                    <div class="container crossing-the-bridge-container py-2 position-relative z-index-2"
+                         data-aos="fade-up"
+                         data-aos-offset="120"
+                         data-aos-delay="0"
+                         data-aos-duration="1000"
+                         data-aos-easing="ease"
+                         data-aos-mirror="false"
+                         data-aos-once="false"
+                    >
                         <div class="row justify-content-center">
                             <div class="col-md-10 text-center text-white">
                                 <h2 class="text-uppercase"><?php echo $wide_title; ?></h2>
@@ -297,7 +334,15 @@ if ($body) :
                 $content_block = $layout['structure']['content_block'] ?? [];
                 ?>
 
-                <section class="<?php echo esc_attr($classes_string); ?>">
+                <section class="<?php echo esc_attr($classes_string); ?>"
+                         data-aos="fade-up"
+                         data-aos-offset="120"
+                         data-aos-delay="0"
+                         data-aos-duration="1000"
+                         data-aos-easing="ease"
+                         data-aos-mirror="false"
+                         data-aos-once="false"
+                >
                     <?php if (!empty($background_image)): ?>
                         <img src="<?php echo esc_url($background_image['url']); ?>"
                              alt="<?php echo esc_attr($background_image['url']); ?>"
@@ -422,7 +467,15 @@ if ($body) :
                     <?php endif; ?>
                     <div class="container position-relative z-index-2">
                         <div class="row justify-content-center">
-                            <div class="col-md-10 <?php echo esc_attr($content_width); ?> text-center">
+                            <div class="col-md-10 <?php echo esc_attr($content_width); ?> text-center"
+                                 data-aos="fade-up"
+                                 data-aos-offset="120"
+                                 data-aos-delay="0"
+                                 data-aos-duration="1000"
+                                 data-aos-easing="ease"
+                                 data-aos-mirror="false"
+                                 data-aos-once="false"
+                            >
 
                                 <?php
                                 // Set the variables you need in the partial
@@ -433,14 +486,30 @@ if ($body) :
                             </div><!--col-->
                         </div><!--row-->
                         <div class="row justify-content-around stacked">
-                            <div class="col-xl-5 col-xxxl-4 text-center">
+                            <div class="col-xl-5 col-xxxl-4 text-center"
+                                 data-aos="fade-up"
+                                 data-aos-offset="120"
+                                 data-aos-delay="150"
+                                 data-aos-duration="1000"
+                                 data-aos-easing="ease"
+                                 data-aos-mirror="false"
+                                 data-aos-once="false"
+                            >
                                 <?php
                                 // Set the variables you need in the partial for the left column
                                 set_query_var('content_block', $column_left['content_block']);
                                 get_template_part('partials/modules/content-block');
                                 ?>
                             </div>
-                            <div class="col-xl-5 col-xxxl-4 text-center">
+                            <div class="col-xl-5 col-xxxl-4 text-center"
+                                 data-aos="fade-up"
+                                 data-aos-offset="120"
+                                 data-aos-delay="300"
+                                 data-aos-duration="1000"
+                                 data-aos-easing="ease"
+                                 data-aos-mirror="false"
+                                 data-aos-once="false"
+                            >
                                 <?php
                                 // Set the variables you need in the partial for the right column
                                 set_query_var('content_block', $column_right['content_block']);
@@ -478,7 +547,8 @@ if ($body) :
 
                 ?>
 
-                <section class="<?php echo esc_attr($classes_string); ?><?php echo $bgc = (!empty($bgcolour))? ' bg-soft' : ''; ?>">
+                <section
+                    class="<?php echo esc_attr($classes_string); ?><?php echo $bgc = (!empty($bgcolour)) ? ' bg-soft' : ''; ?>">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-10 text-center pb-2">
@@ -490,7 +560,15 @@ if ($body) :
                             </div>
                         </div>
                     </div>
-                    <div class="container">
+                    <div class="container"
+                         data-aos="fade-up"
+                         data-aos-offset="120"
+                         data-aos-delay="0"
+                         data-aos-duration="1000"
+                         data-aos-easing="ease"
+                         data-aos-mirror="false"
+                         data-aos-once="false"
+                    >
                         <ul class="gallery-list d-flex flex-row list-inline list-unstyled">
                             <?php foreach ($items as $item):
                                 $galleryimg = $item['gallery_image'];
@@ -540,28 +618,28 @@ if ($body) :
                                 </li>
                             <?php endforeach; ?>
                         </ul>
-                        <?php if(!empty($section_buttons)):
+                        <?php if (!empty($section_buttons)):
                             $buttons = $section_buttons['button'];
                             ?>
-                        <div class="row justify-content-center">
-                            <div class="col text-center">
-                                <div class="buttons">
-                                    <?php foreach ($buttons as $button): ?>
-                                        <?php
-                                        $target = $button['link']['target'] ?? '';
-                                        ?>
-                                        <a href="<?php echo esc_url($button['link']['url']); ?>"
-                                           class="btn <?php echo esc_attr($button['style']); ?> mb-0"
-                                            <?php if (!empty($target)): ?>
-                                                target="<?php echo esc_attr($target); ?>"
-                                            <?php endif; ?>
-                                        >
-                                            <?php echo esc_html($button['link']['title']); ?>
-                                        </a>
-                                    <?php endforeach; ?>
+                            <div class="row justify-content-center">
+                                <div class="col text-center">
+                                    <div class="buttons">
+                                        <?php foreach ($buttons as $button): ?>
+                                            <?php
+                                            $target = $button['link']['target'] ?? '';
+                                            ?>
+                                            <a href="<?php echo esc_url($button['link']['url']); ?>"
+                                               class="btn <?php echo esc_attr($button['style']); ?> mb-0"
+                                                <?php if (!empty($target)): ?>
+                                                    target="<?php echo esc_attr($target); ?>"
+                                                <?php endif; ?>
+                                            >
+                                                <?php echo esc_html($button['link']['title']); ?>
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <?php endif; ?>
                     </div>
                 </section>
@@ -610,12 +688,21 @@ if ($body) :
                         </div>
                         <div class="row justify-content-center">
                             <!--repeater start-->
-                            <?php foreach ($cards as $card):
+                            <?php $carddelay = 50; // starting delay value
+                            foreach ($cards as $card):
                                 $card_icon = $card['icon'];
                                 $card_title = $card['card_title'];
                                 $card_link = $card['button_cta'];
                                 ?>
-                                <div class="col-lg-4 border-right-target text-center">
+                                <div class="col-lg-4 border-right-target text-center"
+                                     data-aos="zoom-in-up"
+                                     data-aos-offset="120"
+                                     data-aos-delay="<?php echo $carddelay; ?>"
+                                     data-aos-duration="800"
+                                     data-aos-easing="ease"
+                                     data-aos-mirror="false"
+                                     data-aos-once="false"
+                                >
                                     <div class="d-flex justify-content-center align-items-center mb-50">
                                         <div class="w-25 text-right">
                                             <img src="<?php echo $card_icon['url']; ?>"
@@ -630,7 +717,9 @@ if ($body) :
                                         More<span
                                             class="sr-only">about <?php echo $card_link['title']; ?></span></a>
                                 </div>
-                            <?php endforeach; ?>
+                                <?php
+                                $carddelay += 150; // increment the delay value
+                                endforeach; ?>
                             <!--repeater end-->
                         </div>
                     </div>
@@ -770,7 +859,14 @@ if ($body) :
                 $header_decorative = $heading_section['header_decorative'];
                 ?>
 
-                <section class="<?php echo esc_attr($classes_string); ?>">
+                <section class="<?php echo esc_attr($classes_string); ?>"
+                         data-aos-offset="120"
+                         data-aos-delay="0"
+                         data-aos-duration="1000"
+                         data-aos-easing="ease"
+                         data-aos-mirror="false"
+                         data-aos-once="false"
+                >
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-10 text-center">

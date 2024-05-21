@@ -57,7 +57,7 @@ h3, .h3 {
     font-weight: 500 !important;
     font-size: 1.5rem;
     line-height: 1.333;
-    @include media-breakpoint-up(xxl) {
+    @include media-breakpoint-up(xxxl) {
         font-size: 1rem;
         line-height: 1.428;
     }
@@ -66,7 +66,7 @@ h3, .h3 {
 h4, .h4 {
     font-size: 1.25rem;
     line-height: 1.5;
-    @include media-breakpoint-up(xxl) {
+    @include media-breakpoint-up(xxxl) {
         font-size: 1.5625rem;
         line-height: 1.4;
     }
@@ -75,7 +75,7 @@ h4, .h4 {
 h5, .h5 {
     font-size: 1.0625rem;
     line-height: 1.53;
-    @include media-breakpoint-up(xxl) {
+    @include media-breakpoint-up(xxxl) {
         font-size: 1.1875rem;
         line-height: 1.79;
     }
@@ -84,7 +84,7 @@ h5, .h5 {
 h6, .h6 {
     font-size: 0.6875rem;
     line-height: 1.636;
-    @include media-breakpoint-up(xxl) {
+    @include media-breakpoint-up(xxxl) {
         font-size: 0.75rem;
         line-height: 1.666;
     }
@@ -119,7 +119,7 @@ h6, .h6 {
 h3, .h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xxxl) {
         font-size: 1.5rem;
     }
 }
@@ -127,7 +127,7 @@ h3, .h3 {
 h4, .h4, .fz-faq {
     font-size: 1rem;
     font-weight: 600;
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xxxl) {
         font-size: 1.25rem;
     }
 }
@@ -135,7 +135,7 @@ h4, .h4, .fz-faq {
 h5, .h5 {
     font-size: .95rem;
     font-weight: 600;
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xxxl) {
         font-size: 1rem;
     }
 }
@@ -150,7 +150,7 @@ h6, .h6 {
 .lead {
     font-weight: 400;
     font-size: 1.1rem;
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xxxl) {
         font-size: 1.5rem;
     }
 }
@@ -167,7 +167,7 @@ p {
 .intro {
     font-size: 1.25rem;
     font-weight: 600;
-    @include media-breakpoint-up(xxl) {
+    @include media-breakpoint-up(xxxl) {
         font-size: 1.6rem;
     }
 }
