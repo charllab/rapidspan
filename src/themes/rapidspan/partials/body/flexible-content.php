@@ -194,7 +194,7 @@ if ($body) :
                 $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
-                $classes = ['my-5'];
+                $classes = ['my-2'];
                 // Conditional classes
                 if (!empty($background_image)) {
                     $classes[] = 'full-width-content--dark';
@@ -528,7 +528,7 @@ if ($body) :
 
                 // Conditional classes
                 if (!empty($background_image)) {
-                    $classes[] = 'full-width-content--dark';
+                    $classes[] = '';
                 }
                 if (!empty($py)) {
                     $classes[] = 'py-5';
