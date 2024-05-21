@@ -54,3 +54,37 @@ body #gform_2 .gform_footer input[type=submit] {
 .btn.btn-outline-light {
     border-width: 2px; /* or any size you prefer */
 }
+
+@include media-breakpoint-up(lg) {
+    /* Basic styling for the buttons */
+    .btn {
+        position: relative;
+        display: inline-block;
+        transition: padding-right 0.3s ease-out; /* Smooth transition for padding */
+    }
+
+    /* Hover effect to add padding and show the arrow */
+    .btn:hover {
+        padding-right: 50px; /* Increase padding on hover to make space for the arrow */
+    }
+
+    /* Add the right arrow */
+    .btn::after {
+        content: '➜'; /* Right arrow character */
+        position: absolute;
+        right: 20px; /* Positioning initial state */
+        top: 50%;
+        transform: translateY(-50%); /* Center the arrow vertically */
+        opacity: 0;
+        font-size: 16px;
+        font-weight: 300;
+        transition: opacity 0.3s ease-out, right 0.3s ease-out; /* Smooth transition for arrow */
+    }
+
+    /* Display the arrow on hover */
+    .btn:hover::after {
+        right: 10px; /* Adjust distance of arrow from the right on hover */
+        opacity: 1;
+    }
+
+}
