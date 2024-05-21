@@ -25,7 +25,7 @@ $header_decorative = $content_block['header_decorative'] ?? false;
 <?php endif; ?>
 
 <?php if (!empty($content_block['above_header'])): ?>
-    <p class="h3 mb-1"><?php echo esc_html($content_block['above_header']); ?></p>
+    <p class="h3 mb-1 text-uppercase"><?php echo esc_html($content_block['above_header']); ?></p>
 <?php endif; ?>
 
 <?php if (!empty($content_block['header'])): ?>
@@ -55,7 +55,7 @@ $header_decorative = $content_block['header_decorative'] ?? false;
             $target = $button['link']['target'] ?? '';
             ?>
             <a href="<?php echo esc_url($button['link']['url']); ?>"
-               class="btn <?php echo esc_attr($button['style']); ?> mb-1"
+               class="btn <?php echo esc_attr($button['style']); ?> mb-250"
                 <?php if (!empty($target)): ?>
                     target="<?php echo esc_attr($target); ?>"
                 <?php endif; ?>
