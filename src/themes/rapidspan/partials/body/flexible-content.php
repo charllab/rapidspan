@@ -294,7 +294,7 @@ if ($body) :
                          data-aos-once="false"
                     >
                         <div class="row justify-content-center">
-                            <div class="col-md-10 text-center text-white">
+                            <div class="col-md-10 text-center text-white position-relative z-index-2">
                                 <h2 class="text-uppercase"><?php echo $wide_title; ?></h2>
                                 <a href="<?php echo $wide_link['url']; ?>"
                                    class="btn btn-light"><?php echo $wide_link['title']; ?></a>

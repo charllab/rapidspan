@@ -59,8 +59,8 @@ body #gform_2 .gform_footer input[type=submit] {
     /* Basic styling for the buttons */
     .btn {
         position: relative;
-        display: inline-block;
         transition: padding-right 0.3s ease-out; /* Smooth transition for padding */
+        line-height: 1;
     }
 
     /* Hover effect to add padding and show the arrow */
@@ -76,7 +76,7 @@ body #gform_2 .gform_footer input[type=submit] {
         top: 50%;
         transform: translateY(-50%); /* Center the arrow vertically */
         opacity: 0;
-        font-size: 16px;
+        font-size: .7rem;
         font-weight: 300;
         transition: opacity 0.3s ease-out, right 0.3s ease-out; /* Smooth transition for arrow */
     }
