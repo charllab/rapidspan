@@ -454,10 +454,42 @@ if ($body) :
             <?php elseif ($layout['acf_fc_layout'] == 'gallery'): ?>
 
                 <?php
+                $spacing = $layout['spacing'] ?? [];
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
+                // Initialize classes array
+                $classes = ['gallery-section'];
+
+                if (!empty($py)) {
+                    $classes[] = 'py-5';
+                }
+                if (!empty($my)) {
+                    $classes[] = 'my-5';
+                }
+
+                // Convert classes array to string
+                $classes_string = implode(' ', $classes);
+
                 $items = $layout['items'];
+                // Extract content block from structure
+                $content_block = $layout['content_block'] ?? [];
+                $bgcolour = $layout['background_colour'] ?? [];
+                $section_buttons = $layout['buttons'] ?? [];
+
                 ?>
 
-                <section>
+                <section class="<?php echo esc_attr($classes_string); ?><?php echo $bgc = (!empty($bgcolour))? ' bg-soft' : ''; ?>">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-10 text-center pb-2">
+                                <?php
+                                // Set the variables you need in the partial
+                                set_query_var('content_block', $content_block);
+                                get_template_part('partials/modules/content-block');
+                                ?>
+                            </div>
+                        </div>
+                    </div>
                     <div class="container">
                         <ul class="gallery-list d-flex flex-row list-inline list-unstyled">
                             <?php foreach ($items as $item):
@@ -508,11 +540,29 @@ if ($body) :
                                 </li>
                             <?php endforeach; ?>
                         </ul>
+                        <?php if(!empty($section_buttons)):
+                            $buttons = $section_buttons['button'];
+                            ?>
                         <div class="row justify-content-center">
                             <div class="col text-center">
-                                <a href="#" class="btn btn-primary">View Projects</a>
+                                <div class="buttons">
+                                    <?php foreach ($buttons as $button): ?>
+                                        <?php
+                                        $target = $button['link']['target'] ?? '';
+                                        ?>
+                                        <a href="<?php echo esc_url($button['link']['url']); ?>"
+                                           class="btn <?php echo esc_attr($button['style']); ?> mb-0"
+                                            <?php if (!empty($target)): ?>
+                                                target="<?php echo esc_attr($target); ?>"
+                                            <?php endif; ?>
+                                        >
+                                            <?php echo esc_html($button['link']['title']); ?>
+                                        </a>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </section>
 
