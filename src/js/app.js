@@ -164,3 +164,16 @@ var targetBlankExternalLinks = function () {
             jQuery(this).attr('target', '_blank');
         });
 };
+
+// navigation sticky on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            navbar.classList.add('scrolled', 'navbar-sticky');
+        } else {
+            navbar.classList.remove('scrolled', 'navbar-sticky');
+        }
+    });
+});

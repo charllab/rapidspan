@@ -14,9 +14,9 @@ $header_decorative = !empty($header['banner_title']['header_decorative']) ? $hea
             <div class="nav-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <img src="<?php bloginfo('template_url'); ?>/images/logo-<?php echo esc_attr($option); ?>.png"
-                         alt="<?php bloginfo('name'); ?> - Logo" class="img-fluid d-none d-lg-block">
+                         alt="<?php bloginfo('name'); ?> - Logo" class="logo-var img-fluid d-none d-lg-block">
                     <img src="<?php bloginfo('template_url'); ?>/images/logo-dark.png"
-                         alt="<?php bloginfo('name'); ?> - Logo" class="img-fluid d-lg-none" aria-hidden="true">
+                         alt="<?php bloginfo('name'); ?> - Logo" class="logo-def img-fluid d-lg-none" aria-hidden="true">
                     <span class="sr-only"><?php bloginfo('name'); ?></span>
                 </a>
             </div>
