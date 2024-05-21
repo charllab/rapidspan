@@ -129,11 +129,11 @@ if ($body) :
 
                 <?php
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
-                $classes = ['full-width-content', 'wide-container ', 'full-width-content-pull-for-gradient', 'mb-5', 'position-relative', 'z-index--1'];
+                $classes = ['full-width-content', 'wide-container ', 'full-width-content-pull-for-gradient', 'pb-4', 'position-relative', 'z-index--1'];
 
                 // Convert classes array to string
                 $classes_string = implode(' ', $classes);
@@ -159,10 +159,10 @@ if ($body) :
                 </section>
 
             <?php elseif ($layout['acf_fc_layout'] == 'page_breaker_image'): ?>
-            <?php
+                <?php
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
                 $classes = [''];
@@ -171,27 +171,27 @@ if ($body) :
                     $classes[] = 'full-width-content--dark';
                 }
                 if (!empty($py)) {
-                    $classes[] = 'py-7';
+                    $classes[] = 'py-5';
                 }
                 if (!empty($my)) {
-                    $classes[] = 'my-7';
+                    $classes[] = 'my-5';
                 }
 
                 // Convert classes array to string
                 $classes_string = implode(' ', $classes);
                 $breaker_img = $layout['image'] ?? [];
-            ?>
-            <?php if(!empty($breaker_img)): ?>
-                <section class="<?php echo esc_attr($classes_string); ?>">
-                    <img src="<?php echo $breaker_img['url']; ?>" alt="<?php echo $breaker_img['alt']; ?>" class="page-breaker-img img-fluid" aria-hidden="true">
-                </section>
-            <?php endif; ?>
+                ?>
+                <?php if(!empty($breaker_img)): ?>
+                    <section class="<?php echo esc_attr($classes_string); ?>">
+                        <img src="<?php echo $breaker_img['url']; ?>" alt="<?php echo $breaker_img['alt']; ?>" class="page-breaker-img img-fluid" aria-hidden="true">
+                    </section>
+                <?php endif; ?>
 
             <?php elseif ($layout['acf_fc_layout'] == 'partner_logos'): ?>
                 <?php
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
                 $classes = ['my-5'];
@@ -200,10 +200,10 @@ if ($body) :
                     $classes[] = 'full-width-content--dark';
                 }
                 if (!empty($py)) {
-                    $classes[] = 'py-7';
+                    $classes[] = 'py-5';
                 }
                 if (!empty($my)) {
-                    $classes[] = 'my-7';
+                    $classes[] = 'my-5';
                 }
 
                 // Convert classes array to string
@@ -229,9 +229,9 @@ if ($body) :
                                 $logo_link = $logo['affiliate_link'] ?? [];
                                 ?>
                                 <div class="col-md-3 text-center">
-                                        <?php echo $logo_link_start = (!empty($logo_link)) ? '<a href="' . $logo_link['url'] . '" target="' . $logo_link['target'] . '" title="' . $logo_link['title'] . '" >' : '' ; ?>
-                                        <img src="<?php echo $logo_img['url']; ?>" alt="<?php echo $logo_img['alt']; ?>" class="logo-image img-fluid">
-                                        <?php echo $logo_link_end = (!empty($logo_link)) ? '</a>' : ''; ?>
+                                    <?php echo $logo_link_start = (!empty($logo_link)) ? '<a href="' . $logo_link['url'] . '" target="' . $logo_link['target'] . '" title="' . $logo_link['title'] . '" >' : '' ; ?>
+                                    <img src="<?php echo $logo_img['url']; ?>" alt="<?php echo $logo_img['alt']; ?>" class="logo-image img-fluid">
+                                    <?php echo $logo_link_end = (!empty($logo_link)) ? '</a>' : ''; ?>
                                 </div>
                             <?php endforeach; ?>
                             <!--repeater end-->
@@ -273,21 +273,21 @@ if ($body) :
                 $background_image = $layout['background_image'] ?? null;
                 $content_width = $layout['content_width'] ?? null;
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
-                $classes = ['full-width-content', 'my-5', 'py-5', 'position-relative', 'z-index--1'];
+                $classes = ['full-width-content', 'position-relative', 'z-index--1'];
 
                 // Conditional classes
                 if (!empty($background_image)) {
                     $classes[] = 'full-width-content--dark';
                 }
                 if (!empty($py)) {
-                    $classes[] = 'py-7';
+                    $classes[] = 'py-5';
                 }
                 if (!empty($my)) {
-                    $classes[] = 'my-7';
+                    $classes[] = 'my-5';
                 }
 
                 // Convert classes array to string
@@ -326,21 +326,21 @@ if ($body) :
                 $background_image = $layout['background_image'] ?? null;
                 $content_width = $layout['content_width'] ?? null;
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
-                $classes = ['full-width-content', 'my-5', 'py-5', 'position-relative', 'z-index--1'];
+                $classes = ['full-width-content', 'position-relative', 'z-index--1'];
 
                 // Conditional classes
                 if (!empty($background_image)) {
                     $classes[] = 'full-width-content--dark';
                 }
                 if (!empty($py)) {
-                    $classes[] = 'py-7';
+                    $classes[] = 'py-5';
                 }
                 if (!empty($my)) {
-                    $classes[] = 'my-7';
+                    $classes[] = 'my-5';
                 }
 
                 // Convert classes array to string
@@ -385,21 +385,21 @@ if ($body) :
                 $background_image = $layout['background_image'] ?? null;
                 $content_width = $layout['content_width'] ?? null;
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
-                $classes = ['full-width-content', 'my-5', 'py-5', 'position-relative', 'z-index--1'];
+                $classes = ['full-width-content', 'position-relative', 'z-index--1'];
 
                 // Conditional classes
                 if (!empty($background_image)) {
                     $classes[] = 'full-width-content--dark';
                 }
                 if (!empty($py)) {
-                    $classes[] = 'py-7';
+                    $classes[] = 'py-5';
                 }
                 if (!empty($my)) {
-                    $classes[] = 'my-7';
+                    $classes[] = 'my-5';
                 }
 
                 // Convert classes array to string
@@ -520,8 +520,8 @@ if ($body) :
 
                 <?php
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
                 $classes = ['three-col-container py-3'];
@@ -531,10 +531,10 @@ if ($body) :
                     $classes[] = 'full-width-content--dark';
                 }
                 if (!empty($py)) {
-                    $classes[] = 'py-7';
+                    $classes[] = 'py-5';
                 }
                 if (!empty($my)) {
-                    $classes[] = 'my-7';
+                    $classes[] = 'my-5';
                 }
                 $classes_string = implode(' ', $classes);
 
@@ -589,8 +589,8 @@ if ($body) :
             <?php elseif ($layout['acf_fc_layout'] == 'portfolio_accordion'): ?>
                 <?php
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
                 $classes = ['py-4'];
@@ -600,10 +600,10 @@ if ($body) :
                     $classes[] = 'py-3';
                 }
                 if (!empty($py)) {
-                    $classes[] = 'py-7';
+                    $classes[] = 'py-5';
                 }
                 if (!empty($my)) {
-                    $classes[] = 'my-7';
+                    $classes[] = 'my-5';
                 }
                 $classes_string = implode(' ', $classes);
 
@@ -697,8 +697,8 @@ if ($body) :
 
                 <?php
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
                 $classes = ['py-4'];
@@ -708,10 +708,10 @@ if ($body) :
                     $classes[] = 'full-width-content--dark';
                 }
                 if (!empty($py)) {
-                    $classes[] = 'py-7';
+                    $classes[] = 'py-5';
                 }
                 if (!empty($my)) {
-                    $classes[] = 'my-7';
+                    $classes[] = 'my-5';
                 }
                 $classes_string = implode(' ', $classes);
 
@@ -755,8 +755,8 @@ if ($body) :
 
                 <?php
                 $spacing = $layout['spacing'] ?? [];
-                $py = in_array('py-7', $spacing) ? 'py-7' : '';
-                $my = in_array('my-7', $spacing) ? 'my-7' : '';
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
                 $classes = ['py-4'];
@@ -766,10 +766,10 @@ if ($body) :
                     $classes[] = 'full-width-content--dark';
                 }
                 if (!empty($py)) {
-                    $classes[] = 'py-7';
+                    $classes[] = 'py-5';
                 }
                 if (!empty($my)) {
-                    $classes[] = 'my-7';
+                    $classes[] = 'my-5';
                 }
                 $classes_string = implode(' ', $classes);
 
