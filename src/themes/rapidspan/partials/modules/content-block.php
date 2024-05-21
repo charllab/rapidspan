@@ -1,7 +1,6 @@
 <?php
 // Get the variables passed from the main template
 $content_block = get_query_var('content_block', []);
-
 // Initialize variables with checks
 $header_image = $content_block['image_header'] ?? null;
 $header_icon = $content_block['header_icon'] ?? null;
@@ -52,10 +51,15 @@ $header_decorative = $content_block['header_decorative'] ?? false;
     <div class="buttons">
         <?php foreach ($buttons as $button): ?>
             <?php
+            $is_video = $button['is_video'] ?? [];
             $target = $button['link']['target'] ?? '';
+            $button_class = $button['style'] ?? '';
+            if (!empty($is_video) && in_array('js-video', $is_video)) {
+                $button_class .= ' js-video-btn';
+            }
             ?>
             <a href="<?php echo esc_url($button['link']['url']); ?>"
-               class="btn <?php echo esc_attr($button['style']); ?> mb-250"
+               class="btn <?php echo esc_attr($button_class); ?> mb-250"
                 <?php if (!empty($target)): ?>
                     target="<?php echo esc_attr($target); ?>"
                 <?php endif; ?>
