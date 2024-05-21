@@ -57,7 +57,15 @@ $header_decorative = !empty($header['banner_title']['header_decorative']) ? $hea
             <div class="container header-container position-absolute z-index-10 w-100 h-100">
                 <div class="row justify-content-center text-center h-100">
                     <div class="col-lg-10">
-                        <div class="top-content flex align-content-center justify-content-center h-100 pt-lg-1 pt-lg-3">
+                        <div class="top-content flex align-content-center justify-content-center h-100 pt-lg-1 pt-lg-3"
+                             data-aos="zoom-out"
+                             data-aos-offset="0"
+                             data-aos-delay="0"
+                             data-aos-duration="500"
+                             data-aos-easing="ease"
+                             data-aos-mirror="false"
+                             data-aos-once="false"
+                        >
                             <?php if (!empty($header['banner_title']['above_header'])): ?>
                                 <p class="h3 text-uppercase mb-75 banner-above-header text-white"><?php echo esc_html($header['banner_title']['above_header']); ?></p>
                             <?php endif; ?>
@@ -84,7 +92,15 @@ $header_decorative = !empty($header['banner_title']['header_decorative']) ? $hea
                 <div class="container header-container position-absolute z-index-10 w-100 h-100">
                     <div class="row justify-content-center text-center h-100">
                         <div class="col-lg-10">
-                            <div class="top-content flex align-content-center justify-content-center h-100 pt-lg-1 pt-lg-3">
+                            <div class="top-content flex align-content-center justify-content-center h-100 pt-lg-1 pt-lg-3"
+                                 data-aos="zoom-out"
+                                 data-aos-offset="0"
+                                 data-aos-delay="0"
+                                 data-aos-duration="500"
+                                 data-aos-easing="ease"
+                                 data-aos-mirror="false"
+                                 data-aos-once="false"
+                            >
                                 <p class="h3 text-uppercase mb-75 banner-above-header text-white">
                                     <?php echo esc_html(get_post_type() == 'project' ? 'Project' : 'Blog'); ?>
                                 </p>
