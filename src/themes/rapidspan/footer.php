@@ -23,7 +23,7 @@
                                 href="mailto:<?php echo get_field('email_address', 'options'); ?>"><?php echo get_field('email_address', 'options'); ?></a>
                         </div>
                     </div>
-                    <div class="footernav">
+                    <div class="footernav d-none d-lg-block">
                         <?php wp_nav_menu([
                             'theme_location' => 'secondary',
                             'container_class' => 'container',
