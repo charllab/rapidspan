@@ -725,7 +725,7 @@ if ($body) :
                         <div class="row justify-content-center">
                             <div class="col-lg-10 text-center">
                                 <?php if (!empty($heading_section)): ?>
-                                    <h2 class="h1"><?php echo $heading_section['header']; ?></h2>
+                                    <h2><?php echo $heading_section['header']; ?></h2>
                                     <?php if (!empty($header_decorative)): ?>
                                         <div class="header-decorative justify-content-center mb-2 mt-150">
                                             <span></span>
