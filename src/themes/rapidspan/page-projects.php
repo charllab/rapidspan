@@ -3,6 +3,9 @@
 
 get_header(); ?>
 
+<main class="z-index-1">
+<?php get_template_part('partials/body/flexible-content'); ?>
+
     <?php
     $args = array(
         'post_type' => 'project',
@@ -13,13 +16,6 @@ get_header(); ?>
     if ($blog_posts->have_posts()) : ?>
         <section>
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center pt-3">
-                        <h1><?php the_title(); ?></h1>
-                        <h3 class="text-uppercase">Choose a project below to see more</h3>
-                        <div class="header-decorative d-flex justify-content-center mb-2 mt-150"><span></span></div>
-                    </div>
-                </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <ul class="d-flex flex-row list-inline list-unstyled project-list py-1">
@@ -73,6 +69,5 @@ get_header(); ?>
     <?php endif; ?>
 
     <?php wp_reset_postdata(); ?>
-</div>
-
+</main>
 <?php get_footer(); ?>
