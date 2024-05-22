@@ -390,3 +390,23 @@ img.fallback-nothing {
     opacity: 1;
     box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 }
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+header.section-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.header-container {
+    position: relative;
+    z-index: 10;
+}

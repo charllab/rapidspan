@@ -43,7 +43,13 @@ $header_decorative = !empty($header['banner_title']['header_decorative']) ? $hea
 
     <?php if ($header): ?>
         <section class="section-image position-relative">
-            <?php if ($banner_img): ?>
+            <?php if (is_front_page()) : ?>
+                <video autoplay muted loop id="background-video" poster="<?php bloginfo('template_url'); ?>/images/video-fallback-image.jpg">
+                    <source src="<?php bloginfo('template_url'); ?>/video/homepage_hero.mp4" type="video/mp4">
+                    <source src="<?php bloginfo('template_url'); ?>/video/homepage_hero.webm" type="video/webm">
+                    <source src="<?php bloginfo('template_url'); ?>/video/homepage_hero.ogv" type="video/ogg">
+                </video>
+            <?php elseif ($banner_img): ?>
                 <img src="<?php echo esc_url($banner_img['url']); ?>" alt="<?php echo esc_attr($banner_img['alt']); ?>"
                      class="img-fluid object-fit-cover" aria-hidden="true">
             <?php endif; ?>

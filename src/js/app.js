@@ -165,7 +165,7 @@ var targetBlankExternalLinks = function () {
         });
 };
 
-// navigation sticky on scroll
+//navigation sticky on scroll
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
 
