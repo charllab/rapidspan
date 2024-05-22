@@ -462,8 +462,8 @@ if ($body) :
                     <?php endif; ?>
                     <div class="container position-relative z-index-2">
                         <div class="row justify-content-around">
-                            <div class="col-xl-5 col-xxxl-4 text-center"
-                                 data-aos="fade-right"
+                            <div class="col-xl-5 col-xxxl-4 text-center mb-1 mb-xl-0"
+                                 data-aos="fade-up"
                                  data-aos-offset="120"
                                  data-aos-delay="200"
                                  data-aos-duration="1500"
@@ -477,8 +477,8 @@ if ($body) :
                                 get_template_part('partials/modules/content-block');
                                 ?>
                             </div>
-                            <div class="col-xl-5 col-xxxl-4 text-center"
-                                 data-aos="fade-left"
+                            <div class="col-xl-5 col-xxxl-4 text-center mb-1 mb-xl-0"
+                                 data-aos="fade-up"
                                  data-aos-offset="120"
                                  data-aos-delay="400"
                                  data-aos-duration="1500"
@@ -510,7 +510,7 @@ if ($body) :
 
                 // Conditional classes
                 if (!empty($background_image)) {
-                    $classes[] = 'full-width-content--dark my-2';
+                    $classes[] = 'full-width-content--dark py-2';
                 }
                 if (!empty($py)) {
                     $classes[] = 'py-lg-5';

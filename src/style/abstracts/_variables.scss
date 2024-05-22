@@ -83,7 +83,7 @@ $spacers: map-merge((
 // Fonts
 $font-family-sans-serif: "Montserrat", sans-serif;
 $font-family-serif: "Quattrocento", serif;
-$headings-font-family: $font-family-serif;
+$headings-font-family: $font-family-sans-serif;
 
 // Figure
 $figure-margin: $spacer * 2.5;

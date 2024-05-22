@@ -344,8 +344,12 @@ $dot-background-active: $primary;
 }
 
 .owl-carousel .item > p {
-    padding-left: $spacer*3;
-    padding-right: $spacer*3;
+    padding-left: $spacer;
+    padding-right: $spacer;
+    @include media-breakpoint-up(md) {
+        padding-left: $spacer*3;
+        padding-right: $spacer*3;
+    }
 }
 .item-img {
     img {
