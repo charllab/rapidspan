@@ -457,7 +457,10 @@ main {
         }
 
         .title-wrapper {
-            transform: translateY(35%);
+            transform: translateY(15%);
+            @include media-breakpoint-up(xxl) {
+                transform: translateY(35%);
+            }
         }
 
         img.project-bride-icon {
