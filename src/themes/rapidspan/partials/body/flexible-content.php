@@ -251,7 +251,7 @@ if ($body) :
                                 $logo_img = $logo['logo'] ?? [];
                                 $logo_link = $logo['affiliate_link'] ?? [];
                                 ?>
-                                <div class="col-md-3 text-center"
+                                <div class="col-10 col-md-3 text-center"
                                      data-aos="zoom-in-up"
                                      data-aos-offset="120"
                                      data-aos-delay="<?php echo $delay; ?>"
@@ -332,6 +332,7 @@ if ($body) :
                 $wide_title = $layout['title'];
                 $wide_link = $layout['link'];
                 ?>
+
                 <section class="crossing-the-bridge-section position-relative z-index-1 mb-4">
                     <div class="crossing-the-bridge-top">
                         <img src="<?php echo $wide_image['url']; ?>" alt="<?php echo $wide_image['alt']; ?>"
@@ -369,7 +370,7 @@ if ($body) :
                 $my = in_array('my-lg-5', $spacing) ? 'my-lg-5' : '';
 
                 // Initialize classes array
-                $classes = ['full-width-content', 'position-relative', 'z-index--1'];
+                $classes = ['full-width-content', 'position-relative', 'z-index--1', 'py-2'];
 
                 // Conditional classes
                 if (!empty($background_image)) {
