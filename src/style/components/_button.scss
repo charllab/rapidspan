@@ -23,36 +23,13 @@ button, .btn {
 
 body .gform_wrapper .gform_footer input[type=submit] {
     @extend .btn;
-    @extend .btn-outline-primary;
+    @extend .btn-primary;
     margin-top: 0 !important;
 }
 
-body #gform_wrapper_1 .gform_footer input[type=submit] {
+body .gform_footer input[type=submit] {
     @extend .btn;
-    @extend .btn-outline-light;
-}
-
-body #gform_2 .gform_footer input[type=submit] {
-    color: white;
-    border-color: white;
-    background-color: #7BB149;
-    min-width: auto;
-    padding: 0 $spacer/1.5;
-    height: auto;
-    border-radius: 0 5px 5px 0;
-    height: 42px;
-    @include media-breakpoint-up(sm) {
-        padding: 0 $spacer;
-    }
-    &:hover {
-        color: white;
-        border-color: white;
-        background-color: $secondary;
-    }
-}
-.btn.btn-outline-success,
-.btn.btn-outline-light {
-    border-width: 2px; /* or any size you prefer */
+    @extend .btn-light;
 }
 
 @include media-breakpoint-up(lg) {

@@ -273,6 +273,57 @@ if ($body) :
                     </div>
                 </section>
 
+            <?php elseif ($layout['acf_fc_layout'] == 'forms'): ?>
+
+                <?php
+                $spacing = $layout['spacing'] ?? [];
+                $py = in_array('py-5', $spacing) ? 'py-5' : '';
+                $my = in_array('my-5', $spacing) ? 'my-5' : '';
+
+                // Initialize classes array
+                $classes = ['my-2'];
+                // Conditional classes
+                if (!empty($background_image)) {
+                    $classes[] = '';
+                }
+                if (!empty($py)) {
+                    $classes[] = 'py-5';
+                }
+                if (!empty($my)) {
+                    $classes[] = 'my-5';
+                }
+
+                // Convert classes array to string
+                $classes_string = implode(' ', $classes);
+
+                $heading_section = $layout['heading_section'] ?? [];
+                $form_id = $layout['form_id'] ?? [];
+                ?>
+
+                <?php if (!empty($form_id)): ?>
+                    <section class="<?php echo esc_attr($classes_string); ?>">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 text-center">
+                                    <?php if (!empty($heading_section)): ?>
+                                        <h2 class="h3 text-uppercase mb-50"><?php echo $heading_section['header']; ?></h2>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center"
+                                 data-aos="zoom-in-up"
+                                 data-aos-offset="120"
+                                 data-aos-delay="150"
+                                 data-aos-duration="800"
+                                 data-aos-easing="ease"
+                                 data-aos-mirror="false"
+                                 data-aos-once="false">
+                                <?php echo do_shortcode('[gravityform id="' . $form_id . '" title="false" description="false" ajax="true"]'); ?>
+                            </div>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
 
             <?php elseif ($layout['acf_fc_layout'] == 'wide_image_with_block_title'): ?>
 
@@ -738,7 +789,7 @@ if ($body) :
                                 </div>
                                 <?php
                                 $carddelay += 150; // increment the delay value
-                                endforeach; ?>
+                            endforeach; ?>
                             <!--repeater end-->
                         </div>
                     </div>
