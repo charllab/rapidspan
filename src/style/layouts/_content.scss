@@ -523,7 +523,7 @@ main {
     }
 
     .block__img-overlay {
-        height: 50%;
+        height: 25%;
         opacity: 1;
         background: rgb(255, 255, 255);
         background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
@@ -548,7 +548,8 @@ img.crossing-the-bridge-img {
     width: 100%;
     height: $spacer*20;
     @include media-breakpoint-up(lg) {
-        height: $spacer*30;
+        height: 55rem;
+        object-position: bottom;
     }
 }
 

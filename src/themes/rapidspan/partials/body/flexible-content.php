@@ -281,7 +281,7 @@ if ($body) :
                 $wide_title = $layout['title'];
                 $wide_link = $layout['link'];
                 ?>
-                <section class="crossing-the-bridge-section position-relative z-index-1 my-4">
+                <section class="crossing-the-bridge-section position-relative z-index-1 mb-4">
                     <div class="crossing-the-bridge-top">
                         <img src="<?php echo $wide_image['url']; ?>" alt="<?php echo $wide_image['alt']; ?>"
                              class="img-fluid crossing-the-bridge-img object-fit-cover z-index--1" aria-hidden="true">
