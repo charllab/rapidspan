@@ -281,7 +281,7 @@ if ($body) :
                 $my = in_array('my-5', $spacing) ? 'my-5' : '';
 
                 // Initialize classes array
-                $classes = ['my-2'];
+                $classes = ['mb-2'];
                 // Conditional classes
                 if (!empty($background_image)) {
                     $classes[] = '';
