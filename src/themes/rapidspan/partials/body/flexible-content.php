@@ -141,6 +141,7 @@ if ($body) :
                 // Extract content block from structure
                 $content_block = $layout['structure']['content_block'] ?? [];
                 ?>
+
                 <section class="<?php echo esc_attr($classes_string); ?>">
                     <img src="https://unsplash.it/1920/1024?random" alt=" "
                          class="full-width-content--dark--bg position-absolute z-index-1 d-none">
@@ -167,6 +168,7 @@ if ($body) :
                 </section>
 
             <?php elseif ($layout['acf_fc_layout'] == 'page_breaker_image'): ?>
+
                 <?php
                 $spacing = $layout['spacing'] ?? [];
                 $py = in_array('py-5', $spacing) ? 'py-5' : '';
@@ -189,6 +191,7 @@ if ($body) :
                 $classes_string = implode(' ', $classes);
                 $breaker_img = $layout['image'] ?? [];
                 ?>
+
                 <?php if (!empty($breaker_img)): ?>
                     <section class="<?php echo esc_attr($classes_string); ?>"
                              data-aos="fade-up"
@@ -205,6 +208,7 @@ if ($body) :
                 <?php endif; ?>
 
             <?php elseif ($layout['acf_fc_layout'] == 'partner_logos'): ?>
+
                 <?php
                 $spacing = $layout['spacing'] ?? [];
                 $py = in_array('py-5', $spacing) ? 'py-5' : '';
@@ -406,14 +410,30 @@ if ($body) :
                     <?php endif; ?>
                     <div class="container position-relative z-index-2">
                         <div class="row justify-content-around">
-                            <div class="col-xl-5 col-xxxl-4 text-center">
+                            <div class="col-xl-5 col-xxxl-4 text-center"
+                                 data-aos="fade-right"
+                                 data-aos-offset="120"
+                                 data-aos-delay="200"
+                                 data-aos-duration="1500"
+                                 data-aos-easing="ease"
+                                 data-aos-mirror="false"
+                                 data-aos-once="false"
+                            >
                                 <?php
                                 // Set the variables you need in the partial for the left column
                                 set_query_var('content_block', $column_left['content_block']);
                                 get_template_part('partials/modules/content-block');
                                 ?>
                             </div>
-                            <div class="col-xl-5 col-xxxl-4 text-center">
+                            <div class="col-xl-5 col-xxxl-4 text-center"
+                                 data-aos="fade-left"
+                                 data-aos-offset="120"
+                                 data-aos-delay="400"
+                                 data-aos-duration="1500"
+                                 data-aos-easing="ease"
+                                 data-aos-mirror="false"
+                                 data-aos-once="false"
+                            >
                                 <?php
                                 // Set the variables you need in the partial for the right column
                                 set_query_var('content_block', $column_right['content_block']);
@@ -671,7 +691,6 @@ if ($body) :
                 $cards = $layout['cards']['card'];
                 ?>
 
-
                 <section class="<?php echo esc_attr($classes_string); ?>">
                     <div class="container">
                         <div class="row justify-content-center">
@@ -726,6 +745,7 @@ if ($body) :
                 </section>
 
             <?php elseif ($layout['acf_fc_layout'] == 'portfolio_accordion'): ?>
+
                 <?php
                 $spacing = $layout['spacing'] ?? [];
                 $py = in_array('py-5', $spacing) ? 'py-5' : '';
