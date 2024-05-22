@@ -607,10 +607,13 @@ a.cover-block {
 }
 
 img.page-breaker-img {
-    height: 27.29vw;
+    height: 54vw;
     width: 100%;
     object-fit: cover;
     object-position: bottom;
+    @include media-breakpoint-up(md) {
+        height: 27.29vw;
+    }
 }
 
 img.logo-image {
