@@ -599,7 +599,7 @@ if ($body) :
                 $py = in_array('py-lg-5', $spacing) ? 'py-lg-5' : '';
                 $my = in_array('my-lg-5', $spacing) ? 'my-lg-5' : '';
                 // Initialize classes array
-                $classes = ['gallery-section my-2'];
+                $classes = ['gallery-section py-2'];
 
                 if (!empty($py)) {
                     $classes[] = 'py-lg-5';
