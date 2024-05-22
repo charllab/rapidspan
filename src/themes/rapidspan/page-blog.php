@@ -26,7 +26,7 @@ get_header(); ?>
                             <!--repeater start-->
                             <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
                                 <li class="list-inline-item list-item-project">
-                                    <a href="<?php the_permalink(); ?>" class="position-relative">
+                                    <a href="<?php the_permalink(); ?>" class="position-relative d-inline-block">
                                         <?php
                                         if (has_post_thumbnail()) :
                                             $thumbnail_id = get_post_thumbnail_id();

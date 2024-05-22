@@ -133,7 +133,7 @@ if ($body) :
                 $my = in_array('my-lg-5', $spacing) ? 'my-lg-5' : '';
 
                 // Initialize classes array
-                $classes = ['full-width-content', 'wide-container ', 'full-width-content-pull-for-gradient', 'pb-2','pb-lg-4', 'position-relative', 'z-index--1'];
+                $classes = ['full-width-content', 'wide-container ', 'full-width-content-pull-for-gradient', 'pb-2', 'pb-lg-4', 'position-relative', 'z-index--1'];
 
                 // Convert classes array to string
                 $classes_string = implode(' ', $classes);
@@ -592,6 +592,15 @@ if ($body) :
                     </div><!--container-->
                 </section>
 
+            <?php elseif ($layout['acf_fc_layout'] == 'anchor_links'): ?>
+
+                <?php
+                $anchor = $layout['anchor_link_name']; ?>
+
+                <?php if (!empty($anchor)): ?>
+                    <a id="<?php echo $anchor; ?>"></a>
+                <?php endif; ?>
+
             <?php elseif ($layout['acf_fc_layout'] == 'gallery'): ?>
 
                 <?php
@@ -867,7 +876,7 @@ if ($body) :
                                                         ?>
                                                         <li class="list-inline-item list-item-project">
                                                             <a href="<?php echo $portfolio_link['url']; ?>"
-                                                               class="position-relative"
+                                                               class="position-relative d-inline-block"
                                                                title="Visit the <?php echo $portfolio_item['project_title'] . ' page.'; ?>">
                                                                 <img
                                                                     src="<?php echo $portfolio_image['url']; ?>"
