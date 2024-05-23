@@ -417,6 +417,9 @@ main {
 
         h3 {
             font-size: .85rem;
+            @include media-breakpoint-down(sm) {
+                font-size: .7rem;
+            }
             @include media-breakpoint-up(xwide) {
                 font-size: 1rem;
             }
@@ -425,6 +428,9 @@ main {
 
         .title-wrapper {
             transition: transform .8s ease 0s;
+            @include media-breakpoint-down(md) {
+                height: 18vw;
+            }
         }
 
         img.project-bride-icon {
