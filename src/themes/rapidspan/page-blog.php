@@ -25,7 +25,7 @@ get_header(); ?>
                         <ul class="d-flex flex-row list-inline list-unstyled project-list py-1">
                             <!--repeater start-->
                             <?php while ($blog_posts->have_posts()) : $blog_posts->the_post(); ?>
-                                <li class="list-inline-item list-item-project">
+                                <li class="list-inline-item list-item-project h-100 overflow-hidden">
                                     <a href="<?php the_permalink(); ?>" class="position-relative d-inline-block h-100 w-100">
                                         <?php
                                         if (has_post_thumbnail()) :

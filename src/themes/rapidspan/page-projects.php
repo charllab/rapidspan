@@ -20,7 +20,7 @@ get_header(); ?>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <div class="accordion" id="accordionExample">
+                        <div class="accordion" id="accordionProjects">
                             <?php
                             $tabcounter = 0;
                             foreach ($categories as $category) :
@@ -40,7 +40,7 @@ get_header(); ?>
                                 if ($category_posts->have_posts()) : ?>
                                     <div class="accordion-item border-0 mb-50">
                                         <h2 class="accordion-header">
-                                            <button class="accordion-button rounded-0" type="button"
+                                            <button class="accordion-button rounded-0 <?php echo $tabcounter === 0 ? '' : 'collapsed'; ?>" type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target="#collapse--<?php echo $tabcounter; ?>"
                                                     aria-expanded="true"
@@ -50,10 +50,10 @@ get_header(); ?>
                                         </h2>
                                         <div id="collapse--<?php echo $tabcounter; ?>"
                                              class="accordion-collapse collapse <?php echo $tabcounter === 0 ? 'show' : ''; ?>"
-                                             data-bs-parent="#accordionExample">
+                                             data-bs-parent="#accordionProjects">
                                             <ul class="d-flex flex-row list-inline list-unstyled project-list pt-1 pb-50 mb-0">
                                                 <?php while ($category_posts->have_posts()) : $category_posts->the_post(); ?>
-                                                    <li class="list-inline-item list-item-project">
+                                                    <li class="list-inline-item list-item-project h-100 overflow-hidden">
                                                         <a href="<?php the_permalink(); ?>" class="position-relative d-inline-block h-100 w-100">
                                                             <?php
                                                             if (has_post_thumbnail()) :

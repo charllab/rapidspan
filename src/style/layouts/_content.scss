@@ -416,7 +416,10 @@ main {
         transition: background 1s ease 0s;
 
         h3 {
-            font-size: 1rem;
+            font-size: .85rem;
+            @include media-breakpoint-up(xwide) {
+                font-size: 1rem;
+            }
 
         }
 

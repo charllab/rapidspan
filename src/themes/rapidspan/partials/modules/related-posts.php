@@ -4,7 +4,7 @@ if (isset($related_posts) && !empty($related_posts)) :
     <div class="related-posts">
         <ul class="d-flex flex-row list-inline list-unstyled project-list py-1">
             <?php foreach ($related_posts as $post) : setup_postdata($post); ?>
-                <li class="list-inline-item list-item-project">
+                <li class="list-inline-item list-item-project h-100 overflow-hidden">
                     <a href="<?php the_permalink(); ?>" class="position-relative d-inline-block h-100 w-100">
                         <?php
                         if (has_post_thumbnail()) :
