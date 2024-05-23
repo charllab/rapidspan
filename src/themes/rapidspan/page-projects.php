@@ -54,7 +54,7 @@ get_header(); ?>
                                             <ul class="d-flex flex-row list-inline list-unstyled project-list pt-1 pb-50 mb-0">
                                                 <?php while ($category_posts->have_posts()) : $category_posts->the_post(); ?>
                                                     <li class="list-inline-item list-item-project">
-                                                        <a href="<?php the_permalink(); ?>" class="position-relative d-inline-block">
+                                                        <a href="<?php the_permalink(); ?>" class="position-relative d-inline-block h-100 w-100">
                                                             <?php
                                                             if (has_post_thumbnail()) :
                                                                 $thumbnail_id = get_post_thumbnail_id();
