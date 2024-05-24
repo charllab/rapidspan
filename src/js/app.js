@@ -1,7 +1,7 @@
 jQuery(function () {
 
     //init animation
-    AOS.init();
+    AOS.init({disable: 'mobile'});
 
 
     // Owl Carousel
