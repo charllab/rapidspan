@@ -273,6 +273,33 @@ if ($body) :
                     </div>
                 </section>
 
+            <?php elseif ($layout['acf_fc_layout'] == 'pdfs'): ?>
+
+            <?php
+//                dump($layout);
+            $pdfs = $layout['pdf_sets'];
+            ?>
+
+
+            <section>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <?php foreach ($pdfs as $pdf):
+                            $buttons = $pdf['buttons'] ?? [];
+                            ?>
+                        <div class="col">
+                            <h3 class="text-capitalize"><?php echo $pdf['title']; ?></h3>
+                            <?php if (!empty($buttons)): ?>
+                                <div class="buttons">
+<!--                                    start here-->
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </section>
+
             <?php elseif ($layout['acf_fc_layout'] == 'forms'): ?>
 
                 <?php
