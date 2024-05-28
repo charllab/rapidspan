@@ -410,3 +410,8 @@ header.section-image {
     position: relative;
     z-index: 10;
 }
+.page-template, .page-template-default:not(.home) {
+    .header-container {
+        display: none;
+    }
+}

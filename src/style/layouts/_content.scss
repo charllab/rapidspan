@@ -661,10 +661,20 @@ hr {
     }
 }
 .pdfs-parent {
-    .pdfs-children {
-        border-right: 1px solid #ccc;
+    @include media-breakpoint-between(md, xxl) {
+        .pdfs-children {
+            margin-bottom: $spacer;
+        }
+        .pdfs-children:nth-child(odd) {
+            border-right: 1px solid #ccc;
+        }
     }
-    .pdfs-children:last-child {
-        border-right: none;
+    @include media-breakpoint-up(xxl) {
+        .pdfs-children {
+            border-right: 1px solid #ccc;
+        }
+        .pdfs-children:last-child {
+            border-right: none;
+        }
     }
 }

@@ -285,7 +285,7 @@ if ($body) :
                             <?php foreach ($pdfs as $pdf):
                                 $buttons = $pdf['buttons']['button'] ?? [];
                                 ?>
-                                <div class="col pdfs-children">
+                                <div class="col col-md-6 col-xxl-3 pdfs-children">
                                     <div class="p-1">
                                         <h3 class="text-capitalize fw-bold"><?php echo $pdf['title']; ?></h3>
 
