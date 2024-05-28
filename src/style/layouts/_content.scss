@@ -660,3 +660,11 @@ hr {
         justify-content: center;
     }
 }
+.pdfs-parent {
+    .pdfs-children {
+        border-right: 1px solid #ccc;
+    }
+    .pdfs-children:last-child {
+        border-right: none;
+    }
+}

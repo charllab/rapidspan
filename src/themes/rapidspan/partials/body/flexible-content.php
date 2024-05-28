@@ -275,30 +275,48 @@ if ($body) :
 
             <?php elseif ($layout['acf_fc_layout'] == 'pdfs'): ?>
 
-            <?php
-//                dump($layout);
-            $pdfs = $layout['pdf_sets'];
-            ?>
+                <?php
+                $pdfs = $layout['pdf_sets'] ?? [];
+                ?>
 
+                <section>
+                    <div class="container">
+                        <div class="row justify-content-center pdfs-parent py-2">
+                            <?php foreach ($pdfs as $pdf):
+                                $buttons = $pdf['buttons']['button'] ?? [];
+                                ?>
+                                <div class="col pdfs-children">
+                                    <div class="p-1">
+                                        <h3 class="text-capitalize fw-bold"><?php echo $pdf['title']; ?></h3>
 
-            <section>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <?php foreach ($pdfs as $pdf):
-                            $buttons = $pdf['buttons'] ?? [];
-                            ?>
-                        <div class="col">
-                            <h3 class="text-capitalize"><?php echo $pdf['title']; ?></h3>
-                            <?php if (!empty($buttons)): ?>
-                                <div class="buttons">
-<!--                                    start here-->
+                                        <?php if (!empty($buttons)): ?>
+                                            <div class="buttons">
+                                                <?php foreach ($buttons as $button): ?>
+                                                    <?php
+                                                    $is_video = $button['is_video'] ?? [];
+                                                    $target = $button['link']['target'] ?? '';
+                                                    $button_class = $button['style'] ?? '';
+                                                    if (!empty($is_video) && in_array('js-video', $is_video)) {
+                                                        $button_class .= ' js-video-btn';
+                                                    }
+                                                    ?>
+                                                    <a href="<?php echo esc_url($button['link']['url']); ?>"
+                                                       class="btn <?php echo esc_attr($button_class); ?> mb-250 w-100 my-50"
+                                                        <?php if (!empty($target)): ?>
+                                                            target="<?php echo esc_attr($target); ?>"
+                                                        <?php endif; ?>
+                                                    >
+                                                        <?php echo esc_html($button['link']['title']); ?>
+                                                    </a>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                            <?php endif; ?>
+                            <?php endforeach; ?>
                         </div>
-                        <?php endforeach; ?>
                     </div>
-                </div>
-            </section>
+                </section>
 
             <?php elseif ($layout['acf_fc_layout'] == 'forms'): ?>
 
