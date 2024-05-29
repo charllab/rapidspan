@@ -35,7 +35,7 @@ get_header(); ?>
                             <?php
                             $removethese = array("(", " ", ")", "-");
                             ?>
-                            <table>
+                            <table class="address-table">
                                 <tr>
                                     <td><strong>Phone: </strong></td>
                                     <td>
@@ -50,7 +50,7 @@ get_header(); ?>
                                 </tr>
                                 <tr>
                                     <td><strong>Address: </strong></td>
-                                    <td><?php echo get_field('physical_address', 'option'); ?></td>
+                                    <td><?php echo get_field('physical_address', 'options'); ?></td>
                                 </tr>
                             </table>
                         </div><!-- bg-light -->

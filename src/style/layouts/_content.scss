@@ -678,3 +678,17 @@ hr {
         }
     }
 }
+
+.address-table {
+    td {
+        vertical-align: top;
+    }
+    tr {
+        td {
+            padding-bottom: $spacer/2;
+        }
+        td + td {
+            padding-left: $spacer/2;
+        }
+    }
+}
